@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LEAN — Training programs by Lynn</title>
+<meta name="description" content="Four-week training programs by Lynn Merhej. A glutes-focused program with gym and home versions, delivered as a PDF instantly. $30 each. Personalized programs by message.">
+<link rel="canonical" href="https://www.leanbylynnmerhej.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LEAN by Lynn Merhej">
+<meta property="og:title" content="LEAN — Training programs by Lynn">
+<meta property="og:description" content="Four-week training programs with gym and home versions. Glutes focused. $30, delivered as a PDF.">
+<meta property="og:url" content="https://www.leanbylynnmerhej.com/">
+<meta property="og:image" content="https://www.leanbylynnmerhej.com/assets/lynn.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#130C26">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --midnight:#130C26;
+    --nightshade:#2A1752;
+    --pine:#1F5546;
+    --volt:#F2DA4A;
+    --volt-hover:#FFE766;
+    --lilac:#A996D8;
+    --chalk:#EFEBF6;
+    --ink:#130C26;
+    --white:#FFFFFF;
+    --plum:var(--midnight);
+    --plum-2:var(--nightshade);
+    --mist:var(--chalk);
+    --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+    --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --pad:clamp(20px,5vw,56px);
+    --max:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:var(--body);font-size:17px;line-height:1.55;color:var(--ink);background:var(--mist)}
+  a{color:inherit}
+  img,svg{max-width:100%;display:block}
+  :focus-visible{outline:3px solid #6B4FC9;outline-offset:3px;border-radius:4px}
+  .dark :focus-visible,.nav :focus-visible,footer :focus-visible{outline-color:var(--volt)}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+  h1,h2,h3{font-family:var(--display);font-weight:800;line-height:.95;letter-spacing:.005em}
+  h1{font-size:clamp(3.4rem,13vw,7.5rem)}
+  h2{font-size:clamp(2.2rem,6.5vw,3.6rem);margin-bottom:.5em}
+  h3{font-size:1.7rem}
+  p{max-width:62ch}
+
+  /* nav */
+  .nav{position:sticky;top:0;z-index:20;background:var(--plum);color:var(--white)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .logo{font-family:var(--display);font-weight:900;font-size:1.9rem;letter-spacing:.08em;text-decoration:none}
+  .nav-links{display:flex;gap:22px;align-items:center;font-size:.95rem}
+  .nav-links a{text-decoration:none;opacity:.85}
+  .nav-links a:hover{opacity:1}
+  .nav-cta{border:1.5px solid var(--lilac);padding:8px 16px;border-radius:999px;font-weight:600;opacity:1!important}
+  .nav-cta:hover{background:var(--lilac);color:var(--midnight)}
+
+  /* buttons */
+  .btn{display:inline-block;font:600 1rem var(--body);background:var(--volt);color:var(--ink);border:0;border-radius:999px;padding:15px 28px;cursor:pointer;text-decoration:none;transition:background .15s,transform .15s}
+  .btn:hover{background:var(--volt-hover);color:var(--ink)}
+  .btn:active{transform:scale(.98)}
+  .btn-line{background:transparent;color:inherit;border:2px solid currentColor}
+  .btn-line:hover{background:var(--chalk);color:var(--midnight)}
+
+  /* sections */
+  section{padding:clamp(48px,9vw,96px) 0}
+  .dark{background:var(--plum);color:var(--white)}
+  .dark p{color:#E7DCEE}
+  .white{background:var(--white)}
+
+  /* views */
+  [data-view]{display:none}
+  body[data-route="home"] [data-view="home"],
+  body[data-route="glutes"] [data-view="glutes"]{display:block}
+
+  /* home hero */
+  .hero{padding-top:clamp(44px,8vw,88px);padding-bottom:clamp(56px,10vw,110px);overflow:hidden}
+  .hero h1{max-width:9ch}
+  .hero h1 span{display:block;color:var(--lilac)}
+  .hero p{font-size:1.2rem;margin:26px 0 32px}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-grid{display:grid;gap:36px;align-items:center}
+  .hero-photo{margin:0;border-radius:20px;overflow:hidden;background:var(--nightshade);max-width:460px}
+  .hero-photo img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%}
+
+  /* program list */
+  .programs{display:grid;gap:14px}
+  .prog{display:grid;grid-template-columns:1fr auto;gap:6px 20px;align-items:center;background:var(--white);border-radius:16px;padding:22px 24px;text-decoration:none}
+  .prog h3{grid-column:1}
+  .prog p{grid-column:1;font-size:.98rem;color:#53435C}
+  .prog .price{grid-column:2;grid-row:1/3;font-family:var(--display);font-weight:800;font-size:2.2rem}
+  .prog.live{border:2px solid var(--pine)}
+  .prog.live:hover{background:#E8F1EE}
+  .prog.soon{background:transparent;border:2px dashed #BBA7C8;color:#53435C}
+  .prog.soon .price{font-size:1rem;font-family:var(--body);font-weight:500}
+  .tag{display:inline-block;font-size:.8rem;font-weight:600;background:var(--volt);color:var(--ink);border-radius:999px;padding:3px 10px;margin-bottom:6px}
+
+  /* about */
+  .about{display:grid;gap:28px}
+  .about .big{font-family:var(--display);font-weight:800;font-size:clamp(1.9rem,5vw,3rem);line-height:1.02;max-width:20ch}
+  .how{display:grid;gap:18px;margin-top:8px}
+  .how div{border-top:2px solid var(--lilac);padding-top:14px}
+  .how strong{display:block;font-size:1.05rem;margin-bottom:2px}
+
+  /* program page hero */
+  .p-hero{padding-top:clamp(36px,7vw,72px);padding-bottom:clamp(40px,7vw,80px)}
+  .back{display:inline-block;margin-bottom:22px;font-size:.95rem;opacity:.85;text-decoration:none}
+  .back:hover{opacity:1;text-decoration:underline}
+  .p-hero h1{font-size:clamp(3.2rem,12vw,6.8rem);max-width:10ch}
+  .p-hero .lead{font-size:1.2rem;margin:22px 0 28px}
+  .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 24px;margin:0 0 30px;max-width:520px}
+  .facts dt{font-size:.88rem;color:var(--lilac)}
+  .facts dd{font-family:var(--display);font-weight:800;font-size:1.7rem;line-height:1.05}
+  .buy-row{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+  .buy-row .price-big{font-family:var(--display);font-weight:800;font-size:2.6rem}
+  .notice{margin-top:14px;padding:12px 16px;border-radius:12px;background:var(--plum-2);color:#fff;font-size:.95rem;max-width:520px}
+  .notice[hidden]{display:none}
+  .dm-line{margin-top:22px;font-size:.98rem;color:#E7DCEE}
+  .dm-line a{color:var(--volt);font-weight:600}
+  .contact-row{display:flex;gap:12px;flex-wrap:wrap}
+  .contact-row-light .btn-line{color:var(--ink)}
+  .notice a{color:var(--volt);font-weight:600}
+  .light-notice{background:var(--plum);}
+
+  /* week preview */
+  .week{background:var(--white);border-radius:20px;overflow:hidden;box-shadow:0 1px 0 #E3DAEA}
+  .tabs{display:flex;overflow-x:auto;border-bottom:2px solid var(--mist)}
+  .tab{flex:1 0 auto;font:600 1rem var(--body);padding:16px 20px;border:0;background:none;color:#6A5A74;cursor:pointer;border-bottom:4px solid transparent;margin-bottom:-2px;white-space:nowrap}
+  .tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--pine)}
+  .day{padding:24px}
+  .day h3{margin-bottom:4px}
+  .day .sub{color:#6A5A74;font-size:.95rem;margin-bottom:18px}
+  .lifts{list-style:none}
+  .lifts li{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-top:1px solid var(--mist);font-weight:500}
+  .lifts li span:last-child{font-family:var(--display);font-weight:800;font-size:1.3rem;white-space:nowrap}
+  .lifts li.locked{color:#8A7B94;font-weight:400;font-style:normal}
+  .lifts li.locked span:last-child{font-family:var(--body);font-size:.9rem;font-weight:500}
+
+  /* progression */
+  .prog-table{display:grid;gap:12px}
+  .prog-row{display:grid;grid-template-columns:90px 1fr;gap:16px;background:var(--plum-2);border-radius:14px;padding:18px 20px}
+  .prog-row b{font-family:var(--display);font-weight:800;font-size:1.7rem;line-height:1}
+  .prog-row span{display:block}
+  .prog-row .what{font-weight:600}
+  .prog-row .effort{color:#D9C9E3;font-size:.95rem;grid-column:1/-1}
+
+  /* inside + fit */
+  .cols{display:grid;gap:36px}
+  .checks{list-style:none}
+  .checks li{padding:12px 0 12px 34px;border-top:1px solid #DDD2E6;position:relative}
+  .checks li::before{content:"";position:absolute;left:4px;top:19px;width:14px;height:8px;border-left:3px solid var(--pine);border-bottom:3px solid var(--pine);transform:rotate(-45deg)}
+  .checks.no li::before{border:0;width:16px;height:3px;background:#8A7B94;transform:none;top:25px;left:2px}
+
+  /* faq */
+  details{border-top:1px solid #DDD2E6;padding:18px 0}
+  details:last-of-type{border-bottom:1px solid #DDD2E6}
+  summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-size:1.4rem;line-height:1}
+  details[open] summary::after{content:"–"}
+  details p{margin-top:10px;color:#4A3F66}
+
+  /* final cta + footer */
+  .final{text-align:left}
+  .final h2{max-width:12ch}
+  footer{background:var(--midnight);color:#CDBFD6;padding:36px 0;font-size:.92rem}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+  footer a{color:#fff}
+
+  @media(min-width:760px){
+    .how{grid-template-columns:repeat(3,1fr)}
+    .cols{grid-template-columns:1fr 1fr}
+    .prog-row{grid-template-columns:110px 1fr 1.2fr;align-items:center}
+    .prog-row .effort{grid-column:auto}
+    .about{grid-template-columns:1fr 1fr;align-items:start}
+    .hero-grid{grid-template-columns:1.1fr .9fr}
+    .hero-photo{justify-self:end}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{transition:none!important}
+  }
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+</head>
+<body data-route="home">
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#/" aria-label="LEAN home">LEAN</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#programs" data-home-link>Programs</a>
+      <a href="#/glutes" class="nav-cta">Glutes program</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HOME ============ -->
+<div data-view="home">
+  <section class="dark hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Train with a plan<span>that ends in week 4.</span></h1>
+        <p>Four-week training programs by Lynn. Clear sessions, set-by-set progression, and a version for the gym or for home. Delivered as a PDF the moment you buy.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#/glutes">See the glutes program</a>
+          <a class="btn btn-line" href="https://instagram.com/lynnmerhej.fit" target="_blank" rel="noopener">@lynnmerhej.fit</a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="assets/lynn.jpg" alt="Lynn smiling and flexing her arm at a Hyrox event" width="900" height="1346" fetchpriority="high">
+      </figure>
+    </div>
+  </section>
+
+  <section id="programs">
+    <div class="wrap">
+      <h2>Programs</h2>
+      <div class="programs" id="program-list"></div>
+    </div>
+  </section>
+
+  <section class="white">
+    <div class="wrap about">
+      <div>
+        <h2>Programmed, not improvised.</h2>
+        <p class="big" style="font-family:var(--body);font-weight:400;font-size:1.15rem;line-height:1.55;max-width:48ch">Each program is built on NCSF programming principles: a proper warm-up, exercises chosen so movements don't repeat across the week, and a progression you can follow without guessing.</p>
+      </div>
+      <div class="how">
+        <div><strong>Pick a program</strong>One goal, one clear plan. No bundles of random workouts.</div>
+        <div><strong>Pay once</strong>$30, no subscription. The PDF is yours to keep.</div>
+        <div><strong>Train for 4 weeks</strong>Follow the sheet, log your lifts, then repeat or move to the next program.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="white">
+    <div class="wrap cols">
+      <div>
+        <h2>Why these programs exist</h2>
+        <p style="margin-bottom:12px">I train people in person. Along the way I kept meeting people who know their way around a gym but don't know how to build a plan, or who don't have the time to put one together.</p>
+        <p>These programs are that plan, already built. You open the PDF, follow the sessions, and skip the guesswork.</p>
+      </div>
+      <div>
+        <h2>They're not for everyone</h2>
+        <p style="margin-bottom:12px">Each program is the same for everyone who buys it. It works best if you know the main lifts and can follow a plan on your own.</p>
+        <p>If you're brand new to training, have an injury, or need something built around your schedule, don't buy one of these. Message me and we'll find what fits.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap final">
+      <h2>Want a program made for you?</h2>
+      <p style="margin-bottom:12px">If you want a plan built around your goal, your schedule, and the equipment you have, message me directly. I also train people in person, so you can ask about that too.</p>
+      <p style="margin-bottom:26px">Personalized programs and in-person training are priced separately. Tell me what you're training for and I'll reply with what I'd do.</p>
+      <div class="contact-row" data-contact></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ GLUTES ============ -->
+<div data-view="glutes">
+  <section class="dark p-hero">
+    <div class="wrap">
+      <a class="back" href="#/">Back to all programs</a>
+      <h1>Glutes focused</h1>
+      <p class="lead">A four-week program built around the glutes. Heavy hip work early in the week, higher-rep pump work at the end, and enough leg training to keep the whole lower body balanced.</p>
+      <dl class="facts">
+        <div><dt>Length</dt><dd>4 weeks</dd></div>
+        <div><dt>Sessions</dt><dd>4 days a week</dd></div>
+        <div><dt>Where</dt><dd>Gym, home swaps included</dd></div>
+        <div><dt>Format</dt><dd>PDF, instant download</dd></div>
+      </dl>
+      <div class="buy-row">
+        <span class="price-big" data-price="glutes">$30</span>
+        <button class="btn" data-buy="glutes">Buy the program</button>
+      </div>
+      <div class="notice" role="status" data-notice hidden></div>
+      <p class="dm-line">Want a plan made just for you instead? <span data-contact-inline></span></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Inside the week</h2>
+      <p style="margin-bottom:26px">Every session opens with the same 8-10 minute warm-up. Tap a day to see the focus and the first lifts.</p>
+      <div class="week">
+        <div class="tabs" role="tablist" aria-label="Training days" id="tabs"></div>
+        <div class="day" id="day-panel" role="tabpanel" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <h2>How the four weeks progress</h2>
+      <div class="prog-table">
+        <div class="prog-row"><b>Week 1</b><span class="what">Learn the lifts</span><span class="effort">Lower rep range, stop with about 3 reps left in the tank.</span></div>
+        <div class="prog-row"><b>Week 2</b><span class="what">Add load</span><span class="effort">Add a little weight or 1-2 reps, with about 2 reps left.</span></div>
+        <div class="prog-row"><b>Week 3</b><span class="what">Add volume</span><span class="effort">An extra set on the first two exercises each day, with 1-2 reps left.</span></div>
+        <div class="prog-row"><b>Week 4</b><span class="what">Push the top sets</span><span class="effort">Last set of each main lift goes close to failure, with good form.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="white">
+    <div class="wrap cols">
+      <div>
+        <h2>What you get</h2>
+        <ul class="checks">
+          <li>A week-by-week PDF with sets, reps, rest, and progression</li>
+          <li>A warm-up and mobility sequence for every session</li>
+          <li>Home swaps for the gym-only lifts</li>
+          <li>A tracking sheet for your weights and reps</li>
+          <li>A short guide on how to use the program and judge effort</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Is it for you?</h2>
+        <ul class="checks">
+          <li>You can train 4 days a week for 4 weeks</li>
+          <li>You have access to a gym, or are happy with the home swaps</li>
+          <li>You want a plan to follow, not a coach checking in</li>
+        </ul>
+        <ul class="checks no" style="margin-top:18px">
+          <li>It's a training plan only. It has no meal plan or diet rules</li>
+          <li>It's built for lifters with some gym experience. A beginner program is planned</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="white">
+    <div class="wrap cols">
+      <div>
+        <h2>Need something personal?</h2>
+        <p>This program is the same for everyone who buys it, so it won't fit everyone. If you want a plan built around your own goal, schedule, injuries, or equipment, or you'd like to train with me in person, message me directly.</p>
+      </div>
+      <div style="align-self:center">
+        <div class="contact-row contact-row-light" data-contact></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Questions</h2>
+      <details><summary>What equipment do I need?</summary><p>A barbell, dumbbells, a bench, a cable machine, and a few machines such as leg press and leg extension. The PDF lists home swaps that need only a bench or couch, dumbbells, and resistance bands.</p></details>
+      <details><summary>How do I get the program?</summary><p>You'll get a download link right after payment. The program is a PDF you can keep on your phone.</p></details>
+      <details><summary>Can I get a program made just for me?</summary><p>Yes. Message me on WhatsApp or Instagram with your goal, how many days you can train, and your equipment. Personalized programs are separate from this $30 one and priced individually. I also train people in person.</p></details>
+      <details><summary>Is it a subscription?</summary><p>No. You pay $30 once.</p></details>
+      <details><summary>What if I have an injury or a medical condition?</summary><p>Check with your doctor or physiotherapist before starting any training program.</p></details>
+      <details><summary>What do I do after four weeks?</summary><p>Repeat the program with heavier weights, or move on to the next program when it's released.</p></details>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap final">
+      <h2>Start week 1 today.</h2>
+      <p style="margin-bottom:26px">Four sessions a week, one clear plan, $30.</p>
+      <button class="btn" data-buy="glutes">Buy the program</button>
+      <div class="notice" role="status" data-notice hidden></div>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>LEAN by Lynn Merhej</span>
+    <span><a href="https://instagram.com/lynnmerhej.fit" target="_blank" rel="noopener">@lynnmerhej.fit</a></span>
+  </div>
+</footer>
+
+<script>
+/* ---------- CONFIG: edit here ---------- */
+const CONFIG = {
+  instagram: "https://instagram.com/lynnmerhej.fit",
+  instagramDM: "https://ig.me/m/lynnmerhej.fit",
+  whatsapp: "", /* your number with country code, digits only, e.g. "961XXXXXXXX" */
+  whatsappMessage: "Hi Lynn, I'd like to ask about a personalized program.",
+  programs: [
+    { id:"glutes",  title:"Glutes focused", blurb:"4 weeks, 4 days a week. Built around the glutes, with legs trained too.", price:"$30", live:true,
+      checkout:"" /* paste your checkout link here once your payment provider is ready */ },
+    { id:"muscle",  title:"Muscle building",     blurb:"A four-week hypertrophy program.", price:"Coming soon", live:false },
+    { id:"fatloss", title:"Fat-loss training",   blurb:"Strength and conditioning sessions.", price:"Coming soon", live:false },
+    { id:"home",    title:"Beginner & home",     blurb:"Minimal equipment, built for starting out.", price:"Coming soon", live:false }
+  ],
+  glutesDays: [
+    { tab:"Day 1", name:"Glute strength", sub:"Heavy hip work with long rests.",
+      show:[["Barbell hip thrust","4 x 6-8"],["Romanian deadlift","3 x 8-10"],["Bulgarian split squat","3 x 8-10 / leg"]], more:2 },
+    { tab:"Day 2", name:"Quads & glute med", sub:"Squat patterns and single-leg work.",
+      show:[["Goblet or barbell squat","4 x 8-10"],["Walking lunges","3 x 10 / leg"],["Leg press, feet high and wide","3 x 12"]], more:2 },
+    { tab:"Day 3", name:"Hamstrings & glutes", sub:"Hinge patterns and hamstring work.",
+      show:[["Sumo or conventional deadlift","3 x 6-8"],["Hamstring curl","3 x 10-12"],["Reverse lunge","3 x 10 / leg"]], more:2 },
+    { tab:"Day 4", name:"Glute pump", sub:"Higher reps, shorter rests, big finish.",
+      show:[["Single-leg hip thrust","3 x 10 / leg"],["Frog pumps","3 x 20-25"],["Curtsy lunge","3 x 12 / leg"]], more:2 }
+  ]
+};
+
+/* ---------- Contact buttons (WhatsApp + Instagram) ---------- */
+const waLink = CONFIG.whatsapp ? "https://wa.me/"+CONFIG.whatsapp.replace(/\D/g,"")+"?text="+encodeURIComponent(CONFIG.whatsappMessage) : "";
+document.querySelectorAll("[data-contact]").forEach(box=>{
+  box.innerHTML = (waLink ? '<a class="btn" href="'+waLink+'" target="_blank" rel="noopener">Message me on WhatsApp</a>' : '') +
+    '<a class="btn '+(waLink?'btn-line':'')+'" href="'+CONFIG.instagramDM+'" target="_blank" rel="noopener">Message me on Instagram</a>';
+});
+document.querySelectorAll("[data-contact-inline]").forEach(el=>{
+  el.innerHTML = (waLink ? '<a href="'+waLink+'" target="_blank" rel="noopener">Message me on WhatsApp</a> or <a href="'+CONFIG.instagramDM+'" target="_blank" rel="noopener">Instagram</a>.' :
+    '<a href="'+CONFIG.instagramDM+'" target="_blank" rel="noopener">Message me directly</a>.');
+});
+
+/* ---------- Program list (home) ---------- */
+const list = document.getElementById("program-list");
+CONFIG.programs.forEach(p=>{
+  const el = document.createElement(p.live ? "a" : "div");
+  el.className = "prog " + (p.live ? "live" : "soon");
+  if(p.live) el.href = "#/" + p.id;
+  el.innerHTML = (p.live ? '<span class="tag" style="grid-column:1">Available now</span>' : '') +
+    '<h3>'+p.title+'</h3><p>'+p.blurb+'</p><span class="price">'+p.price+'</span>';
+  list.appendChild(el);
+});
+
+/* ---------- Sample week tabs ---------- */
+const tabs = document.getElementById("tabs");
+const panel = document.getElementById("day-panel");
+function showDay(i){
+  [...tabs.children].forEach((t,k)=>t.setAttribute("aria-selected", k===i));
+  const d = CONFIG.glutesDays[i];
+  panel.innerHTML = '<h3>'+d.name+'</h3><p class="sub">'+d.sub+'</p><ul class="lifts">' +
+    d.show.map(x=>'<li><span>'+x[0]+'</span><span>'+x[1]+'</span></li>').join('') +
+    '<li class="locked"><span>+ '+d.more+' more exercises</span><span>In the PDF</span></li></ul>';
+}
+CONFIG.glutesDays.forEach((d,i)=>{
+  const b = document.createElement("button");
+  b.className="tab"; b.type="button"; b.setAttribute("role","tab"); b.textContent=d.tab;
+  b.onclick=()=>showDay(i);
+  tabs.appendChild(b);
+});
+showDay(0);
+
+/* ---------- Buy buttons ---------- */
+document.querySelectorAll("[data-buy]").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    const p = CONFIG.programs.find(x=>x.id===btn.dataset.buy);
+    if(p && p.checkout){ window.location.href = p.checkout; return; }
+    document.querySelectorAll("[data-notice]").forEach(n=>{
+      n.hidden=false;
+      n.innerHTML = 'Checkout isn\'t open yet. Message me to get the program now: ' + (waLink ? '<a href="'+waLink+'" target="_blank" rel="noopener">WhatsApp</a> or ' : '') + '<a href="'+CONFIG.instagramDM+'" target="_blank" rel="noopener">Instagram</a>.';
+    });
+  });
+});
+
+/* ---------- Router ---------- */
+function route(){
+  const h = location.hash;
+  const r = h.startsWith("#/glutes") ? "glutes" : "home";
+  document.body.dataset.route = r;
+  document.title = r==="glutes" ? "Glutes focused — LEAN" : "LEAN — Training programs by Lynn";
+  if(h==="#programs"){ setTimeout(()=>document.getElementById("programs").scrollIntoView(),0); }
+  else window.scrollTo(0,0);
+}
+document.querySelector("[data-home-link]").addEventListener("click",e=>{
+  if(document.body.dataset.route!=="home"){ e.preventDefault(); location.hash="#/"; setTimeout(()=>document.getElementById("programs").scrollIntoView(),50); }
+});
+window.addEventListener("hashchange",route);
+route();
+</script>
+</body>
+</html>
