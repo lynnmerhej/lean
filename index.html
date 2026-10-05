@@ -143,6 +143,14 @@
   .lifts li.locked{color:#8A7B94;font-weight:400;font-style:normal}
   .lifts li.locked span:last-child{font-family:var(--body);font-size:.9rem;font-weight:500}
 
+  /* week at a glance */
+  .glance{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+  .glance-card{background:var(--white);border-radius:16px;padding:22px 22px 20px;display:flex;flex-direction:column;gap:6px}
+  .glance-day{font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--pine)}
+  .glance-card h3{font-size:1.9rem}
+  .glance-card p{color:#53435C;font-size:.98rem}
+  .glance-count{margin-top:10px;padding-top:12px;border-top:1px solid var(--mist);font-size:.92rem;font-weight:600}
+
   /* progression */
   .prog-table{display:grid;gap:12px}
   .prog-row{display:grid;grid-template-columns:90px 1fr;gap:16px;background:var(--plum-2);border-radius:14px;padding:18px 20px}
@@ -303,12 +311,9 @@
 
   <section>
     <div class="wrap">
-      <h2>Inside the week</h2>
-      <p style="margin-bottom:26px">Every session opens with a short warm-up. Tap a day to see the focus and the first lifts.</p>
-      <div class="week">
-        <div class="tabs" role="tablist" aria-label="Training days" id="tabs"></div>
-        <div class="day" id="day-panel" role="tabpanel" aria-live="polite"></div>
-      </div>
+      <h2>A week at a glance</h2>
+      <p style="margin-bottom:26px">Here's how each week is laid out. Every session opens with a short warm-up. The exact exercises, sets, and reps are inside the PDF.</p>
+      <div class="glance" id="p-days"></div>
     </div>
   </section>
 
@@ -411,13 +416,13 @@ const CONFIG = {
       facts: [["Length","4 weeks"],["Sessions","4 days a week"],["Where","Gym, home options"],["Format","PDF, instant download"]],
       days: [
         { tab:"Day 1", name:"Lower body strength", sub:"Build the base with big leg movements.",
-          show:[["Goblet squat","4 x 8-10"],["Romanian deadlift","3 x 10"],["Walking lunge","3 x 10 / leg"]], more:2 },
+          exercises:5 },
         { tab:"Day 2", name:"Upper body & core", sub:"Push, pull, and core work.",
-          show:[["Dumbbell bench press or push-up","4 x 8-12"],["One-arm dumbbell row","3 x 10 / arm"],["Dumbbell shoulder press","3 x 10"]], more:2 },
+          exercises:5 },
         { tab:"Day 3", name:"Conditioning circuit", sub:"Higher heart rate, shorter rests.",
-          show:[["Kettlebell or dumbbell swing","4 x 15"],["Step-ups","3 x 12 / leg"],["Mountain climbers","3 x 30 sec"]], more:2 },
+          exercises:5 },
         { tab:"Day 4", name:"Full body", sub:"Everything together to finish the week.",
-          show:[["Deadlift","3 x 6-8"],["Lat pulldown or pull-up","3 x 8-10"],["Split squat","3 x 10 / leg"]], more:2 }
+          exercises:5 }
       ],
       yes: ["You can train 4 days a week for 4 weeks","You have a gym, or are happy with the home options","You want a plan to follow, not a coach checking in"],
       no: ["It's built for people who already know the basic lifts"],
@@ -431,13 +436,13 @@ const CONFIG = {
       facts: [["Length","4 weeks"],["Sessions","4 days, 20-40 min"],["Where","At home, no gym"],["Format","PDF, instant download"]],
       days: [
         { tab:"Day 1", name:"Lower body", sub:"Legs and glutes with your own bodyweight.",
-          show:[["Squat","4 x 12-15"],["Reverse lunge","3 x 10 / leg"],["Glute bridge","3 x 15"]], more:2 },
+          exercises:5 },
         { tab:"Day 2", name:"Upper body", sub:"Push and pull with bodyweight and a band.",
-          show:[["Push-up (any variation)","4 x 8-15"],["Band row","3 x 12-15"],["Pike push-up","3 x 8-10"]], more:2 },
+          exercises:5 },
         { tab:"Day 3", name:"Core & cardio", sub:"Short, sweaty, and simple.",
-          show:[["Plank","3 x 30-45 sec"],["Mountain climbers","3 x 30 sec"],["Squat jumps","3 x 12"]], more:2 },
+          exercises:5 },
         { tab:"Day 4", name:"Full-body circuit", sub:"The whole body in one session.",
-          show:[["Split squat","3 x 10 / leg"],["Single-leg hip hinge","3 x 10 / leg"],["Incline push-up","3 x 12"]], more:2 }
+          exercises:5 }
       ],
       yes: ["You want to train at home, with little or no equipment","You have 20-40 minutes a few times a week","You want a plan to follow, not a coach checking in"],
       no: ["It uses light equipment, so it's not built for lifting heavy"],
@@ -457,11 +462,11 @@ const CONFIG = {
       ],
       days: [
         { tab:"Day 1", name:"Lower body basics", sub:"Machines and simple free weights.",
-          show:[["Leg press","3 x 10-12"],["Goblet squat","3 x 10"],["Seated hamstring curl","3 x 12"]], more:2 },
+          exercises:5 },
         { tab:"Day 2", name:"Upper body basics", sub:"Push and pull on machines and cables.",
-          show:[["Chest press machine","3 x 10-12"],["Lat pulldown","3 x 10-12"],["Seated dumbbell shoulder press","3 x 10"]], more:2 },
+          exercises:5 },
         { tab:"Day 3", name:"Full body", sub:"Put it all together.",
-          show:[["Dumbbell Romanian deadlift","3 x 10"],["Seated cable row","3 x 12"],["Walking lunge","2 x 10 / leg"]], more:2 }
+          exercises:5 }
       ],
       yes: ["You're new to the gym, or feel lost when you walk in","You can train 3 days a week for 4 weeks","You want simple sessions that teach you the basics"],
       no: ["It's built for beginners. If you've trained for years, try Full-Body Strength"],
@@ -481,11 +486,11 @@ const CONFIG = {
       ],
       days: [
         { tab:"Day A", name:"Squat & push", sub:"Heavy legs and chest to start.",
-          show:[["Squat","4 x 5-6"],["Bench press","4 x 5-6"],["Barbell row","3 x 8"]], more:2 },
+          exercises:5 },
         { tab:"Day B", name:"Hinge & press", sub:"Deadlift day with overhead work.",
-          show:[["Deadlift","3 x 5"],["Overhead press","3 x 6-8"],["Pull-up or lat pulldown","3 x 8-10"]], more:2 },
+          exercises:5 },
         { tab:"Day C", name:"Volume day", sub:"Lighter weights, more reps.",
-          show:[["Goblet or front squat","3 x 8"],["Incline dumbbell press","3 x 8-10"],["Hip thrust","3 x 8-10"]], more:2 }
+          exercises:5 }
       ],
       yes: ["You know the basic lifts and want to get stronger","You can train 3 days a week for 4 weeks","You want a plan with clear targets to follow"],
       no: ["It's not built for complete beginners. Start with Gym Starter if you're new"],
@@ -526,22 +531,8 @@ function renderProgram(p){
   $("#p-price").textContent = p.price;
   $("#p-facts").innerHTML = p.facts.map(f=>'<div><dt>'+f[0]+'</dt><dd>'+f[1]+'</dd></div>').join("");
 
-  const tabs = $("#tabs"), panel = $("#day-panel");
-  tabs.innerHTML = "";
-  const showDay = i => {
-    [...tabs.children].forEach((t,k)=>t.setAttribute("aria-selected", k===i));
-    const d = p.days[i];
-    panel.innerHTML = '<h3>'+d.name+'</h3><p class="sub">'+d.sub+'</p><ul class="lifts">' +
-      d.show.map(x=>'<li><span>'+x[0]+'</span><span>'+x[1]+'</span></li>').join("") +
-      '<li class="locked"><span>+ '+d.more+' more exercises</span><span>In the PDF</span></li></ul>';
-  };
-  p.days.forEach((d,i)=>{
-    const b = document.createElement("button");
-    b.className = "tab"; b.type = "button"; b.setAttribute("role","tab"); b.textContent = d.tab;
-    b.onclick = () => showDay(i);
-    tabs.appendChild(b);
-  });
-  showDay(0);
+  $("#p-days").innerHTML = p.days.map(d=>
+    '<div class="glance-card"><span class="glance-day">'+d.tab+'</span><h3>'+d.name+'</h3><p>'+d.sub+'</p><span class="glance-count">'+d.exercises+' exercises</span></div>').join("");
 
   const prog = p.progress || CONFIG.progress;
   $("#p-progress").innerHTML = prog.map((r,i)=>
