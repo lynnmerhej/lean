@@ -93,11 +93,27 @@
   .prog{display:grid;grid-template-columns:1fr auto;gap:6px 20px;align-items:center;background:var(--white);border-radius:16px;padding:22px 24px;text-decoration:none}
   .prog h3{grid-column:1}
   .prog p{grid-column:1;font-size:.98rem;color:#53435C}
-  .prog .price{grid-column:2;grid-row:1/3;font-family:var(--display);font-weight:800;font-size:2.2rem}
+  .prog .price{grid-column:2;grid-row:1/-1;align-self:center;font-family:var(--display);font-weight:800;font-size:2.2rem}
   .prog.live{border:2px solid var(--pine)}
   .prog.live:hover{background:#E8F1EE}
   .prog.soon{background:transparent;border:2px dashed #BBA7C8;color:#53435C}
   .prog.soon .price{font-size:1rem;font-family:var(--body);font-weight:500}
+  .prog-goal{grid-column:1;font-size:.95rem;color:var(--ink);margin-top:4px}
+  .chips{grid-column:1;display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .chips span{font-size:.8rem;font-weight:600;color:var(--nightshade);background:var(--chalk);border-radius:999px;padding:4px 10px}
+  .pick-title{margin:34px 0 12px;font-size:1.9rem}
+  .pick{display:grid;gap:8px}
+  .pick-row{display:flex;flex-direction:column;align-items:flex-start;gap:4px;background:transparent;border:1.5px solid #CFC3DC;border-radius:14px;padding:14px 18px;text-decoration:none}
+  .pick-row:hover{background:var(--white)}
+  @media(min-width:560px){.pick-row{flex-direction:row;justify-content:space-between;align-items:center;gap:16px}}
+  .pick-row span{font-weight:500}
+  .pick-row b{font-family:var(--display);font-weight:800;font-size:1.25rem;white-space:nowrap;color:var(--pine)}
+  .spec{display:grid;gap:0;background:var(--white);border-radius:16px;padding:6px 22px}
+  .spec div{display:grid;gap:2px;padding:16px 0;border-top:1px solid var(--mist)}
+  .spec div:first-child{border-top:0}
+  .spec dt{font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--pine)}
+  .spec dd{font-size:1.02rem}
+  @media(min-width:760px){.spec div{grid-template-columns:200px 1fr;gap:20px}}
   .tag{display:inline-block;font-size:.8rem;font-weight:600;background:var(--volt);color:var(--ink);border-radius:999px;padding:3px 10px;margin-bottom:6px}
 
   /* about */
@@ -234,6 +250,8 @@
     <div class="wrap">
       <h2>Programs</h2>
       <div class="programs" id="program-list"></div>
+      <h3 class="pick-title">Not sure which one?</h3>
+      <div class="pick" id="pick-list"></div>
     </div>
   </section>
 
@@ -293,6 +311,13 @@
       <p class="price-note">A coach-built plan for $30, plus a one-on-one call with me at the end.</p>
       <div class="notice" role="status" data-notice hidden></div>
       <p class="dm-line">Want a plan made just for you instead? <span data-contact-inline></span></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>What this program is</h2>
+      <dl class="spec" id="p-spec"></dl>
     </div>
   </section>
 
@@ -411,9 +436,14 @@ const CONFIG = {
     {
       id: "lean-strong", title: "Lean & Strong", price: "$30", checkout: "", /* paste checkout link here */
       blurb: "Random workouts, no change? A structured plan.",
+      goal: "Lose fat and keep your muscle",
+      style: "Strength training plus conditioning, full body",
+      level: "Some training experience. You know the basic lifts.",
+      chips: ["The gym","4 days a week","Some experience"],
+      pick: "I want to lose fat, but I train with no clear plan.",
       headline: "Doing random workouts and not seeing change?",
       lead: "Lean & Strong gives you a structured four-week plan that mixes strength and conditioning, so every session has a purpose. Training only, with no diet rules.",
-      facts: [["Length","4 weeks"],["Sessions","4 days a week"],["Where","The gym"]],
+      facts: [["Length","4 weeks"],["Sessions","4 days a week"],["Where","The gym"],["Level","Some experience"]],
       days: [
         { tab:"Day 1", name:"Lower body strength", sub:"Build the base with big leg movements.",
           exercises:"5-6" },
@@ -430,10 +460,15 @@ const CONFIG = {
     },
     {
       id: "home", title: "Home Workouts", price: "$30", checkout: "",
-      blurb: "No time? 10-minute sessions at home.",
-      headline: "No time to train? Do it at home.",
-      lead: "Home Workouts gives you four weeks of sessions you can do in your living room, and every session has a 10-minute version for busy days. Private, simple, and no gym needed.",
-      facts: [["Length","4 weeks"],["Sessions","4 days, 20-40 min"],["Where","At home, no gym"]],
+      blurb: "No gym? Full one-hour sessions at home.",
+      goal: "Get fitter and stronger without a gym",
+      style: "Full-body sessions with bodyweight, a resistance band, and dumbbells",
+      level: "Beginner to intermediate",
+      chips: ["At home","4 days, about 1 hour","Beginner and up"],
+      pick: "I can't get to a gym.",
+      headline: "Can't get to a gym? Train at home.",
+      lead: "Home Workouts gives you four weeks of full one-hour sessions you can do in your living room, with simple equipment and a plan that builds week by week. Private, simple, and no gym needed.",
+      facts: [["Length","4 weeks"],["Sessions","4 days, about 1 hour"],["Where","At home, no gym"],["Level","Beginner to intermediate"]],
       days: [
         { tab:"Day 1", name:"Lower body", sub:"Legs and glutes with your own bodyweight.",
           exercises:"5-6" },
@@ -444,16 +479,21 @@ const CONFIG = {
         { tab:"Day 4", name:"Full-body circuit", sub:"The whole body in one session.",
           exercises:"5-6" }
       ],
-      yes: ["You want to train at home, with little or no equipment","You have 20-40 minutes a few times a week","You want a plan to follow, not a coach checking in"],
+      yes: ["You want to train at home, with little or no equipment","You can set aside about an hour, four days a week","You want a plan to follow, not a coach checking in"],
       no: ["It uses light equipment, so it's not built for lifting heavy"],
       equipment: "Nothing is required. A resistance band and a pair of dumbbells make it better, and the program shows how to do each session without them."
     },
     {
       id: "gym-starter", title: "Gym Starter", price: "$30", checkout: "",
       blurb: "Lost in the gym? A plan for your first month.",
+      goal: "Learn the gym and build a base",
+      style: "Machines, cables, dumbbells, and the basic lifts",
+      level: "Complete beginner. No experience needed.",
+      chips: ["The gym","3 days a week","Beginner"],
+      pick: "I'm new to the gym.",
       headline: "Don't know what to do in the gym?",
       lead: "Gym Starter gives you a written plan for your first four weeks, so you walk in knowing exactly what to do. Simple sessions that teach you the machines, the basic lifts, and good form.",
-      facts: [["Length","4 weeks"],["Sessions","3 days a week"],["Where","The gym"]],
+      facts: [["Length","4 weeks"],["Sessions","3 days a week"],["Where","The gym"],["Level","Complete beginner"]],
       progress: [
         ["Learn the moves", "Light weights. Focus on form and getting comfortable with the machines."],
         ["Add a little weight", "Increase the weight slightly when the last reps feel easy."],
@@ -475,9 +515,14 @@ const CONFIG = {
     {
       id: "full-body-strength", title: "Full-Body Strength", price: "$30", checkout: "",
       blurb: "Not getting stronger? Clear weekly targets.",
+      goal: "Get stronger on the big lifts",
+      style: "Heavy compound lifts with a clear weekly progression",
+      level: "Intermediate. You know the basic lifts.",
+      chips: ["The gym","3 days a week","Intermediate"],
+      pick: "I want to get stronger.",
       headline: "Training but not getting stronger?",
       lead: "Full-Body Strength gives you three sessions a week and a clear target for what to lift each week, so you always know when to add weight.",
-      facts: [["Length","4 weeks"],["Sessions","3 days a week"],["Where","The gym"]],
+      facts: [["Length","4 weeks"],["Sessions","3 days a week"],["Where","The gym"],["Level","Intermediate"]],
       progress: [
         ["Set your base", "Start light enough to move well, with 2-3 reps left."],
         ["Add weight", "Add weight to the main lifts."],
@@ -518,10 +563,13 @@ $("#nav-contact").target = "_blank";
 $("#nav-contact").rel = "noopener";
 
 /* ---------- Program cards ---------- */
-function card(p){
-  return '<a class="prog" href="#/p/'+p.id+'"><h3>'+p.title+'</h3><p>'+p.blurb+'</p><span class="price">'+p.price+'</span></a>';
+function card(p, full){
+  return '<a class="prog" href="#/p/'+p.id+'"><h3>'+p.title+'</h3><p>'+p.blurb+'</p>' +
+    (full ? '<p class="prog-goal"><strong>Goal:</strong> '+p.goal+'</p><div class="chips">'+p.chips.map(c=>'<span>'+c+'</span>').join("")+'</div>' : '') +
+    '<span class="price">'+p.price+'</span></a>';
 }
-$("#program-list").innerHTML = CONFIG.programs.map(card).join("");
+$("#program-list").innerHTML = CONFIG.programs.map(p=>card(p,true)).join("");
+$("#pick-list").innerHTML = CONFIG.programs.map(p=>'<a class="pick-row" href="#/p/'+p.id+'"><span>'+p.pick+'</span><b>'+p.title+' &rarr;</b></a>').join("");
 
 /* ---------- Program page ---------- */
 function renderProgram(p){
@@ -531,6 +579,13 @@ function renderProgram(p){
   $("#p-price").textContent = p.price;
   $("#p-facts").innerHTML = p.facts.map(f=>'<div><dt>'+f[0]+'</dt><dd>'+f[1]+'</dd></div>').join("");
 
+  $("#p-spec").innerHTML = [
+    ["The goal", p.goal],
+    ["How you'll train", p.style],
+    ["Level", p.level],
+    ["Equipment", p.equipment],
+    ["Good to know", (p.no && p.no[0]) || ""]
+  ].filter(r=>r[1]).map(r=>'<div><dt>'+r[0]+'</dt><dd>'+r[1]+'</dd></div>').join("");
   $("#p-days").innerHTML = p.days.map(d=>
     '<div class="glance-card"><span class="glance-day">'+d.tab+'</span><h3>'+d.name+'</h3><p>'+d.sub+'</p><span class="glance-count">'+d.exercises+' exercises + warm-up & cooldown</span></div>').join("");
 
