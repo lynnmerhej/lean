@@ -39,11 +39,13 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-  body{font-family:var(--body);font-size:17px;line-height:1.55;color:var(--ink);background:var(--mist)}
+  body{min-height:100vh;display:flex;flex-direction:column;font-family:var(--body);font-size:17px;line-height:1.55;color:var(--ink);background:var(--mist)}
   a{color:inherit}
   img,svg{max-width:100%;display:block}
   :focus-visible{outline:3px solid #6B4FC9;outline-offset:3px;border-radius:4px}
   .dark :focus-visible,.nav :focus-visible,footer :focus-visible{outline-color:var(--volt)}
+  main{flex:1 0 auto}
+  body[data-route="page"] main{background:var(--white)}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
   h1,h2,h3{font-family:var(--display);font-weight:800;line-height:.95;letter-spacing:.005em}
   h1{font-size:clamp(3.4rem,13vw,7.5rem)}
@@ -835,7 +837,6 @@ const PAGES = {
       (waLink ? '<a class="btn" href="'+waLink+'" target="_blank" rel="noopener">Message me on WhatsApp</a>' : '') +
       '<a class="btn '+(waLink?'btn-line':'')+'" href="'+CONFIG.instagramDM+'" target="_blank" rel="noopener">Message me on Instagram</a>' +
     `</div>
-    <p>${contactLines()}</p>
     <p>See also: <a href="#/terms">Terms of sale</a> &middot; <a href="#/refunds">Refund policy</a> &middot; <a href="#/privacy">Privacy policy</a></p>` }
 };
 function renderPage(key){
