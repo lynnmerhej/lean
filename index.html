@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>LEAN — Training programs by Lynn</title>
-<meta name="description" content="Four-week training programs by Lynn Merhej. A glutes-focused program with gym and home versions, delivered as a PDF instantly. $30 each. Personalized programs by message.">
+<meta name="description" content="Four-week training programs by Lynn Merhej: fat-loss training, home workouts, a gym starter, and full-body strength. $30 each, delivered as a PDF. Personalized programs by message.">
 <link rel="canonical" href="https://www.leanbylynnmerhej.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="LEAN by Lynn Merhej">
 <meta property="og:title" content="LEAN — Training programs by Lynn">
-<meta property="og:description" content="Four-week training programs with gym and home versions. Glutes focused. $30, delivered as a PDF.">
+<meta property="og:description" content="Four-week training programs for different goals. $30 each, delivered as a PDF.">
 <meta property="og:url" content="https://www.leanbylynnmerhej.com/">
 <meta property="og:image" content="https://www.leanbylynnmerhej.com/assets/lynn.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -76,7 +76,7 @@
   /* views */
   [data-view]{display:none}
   body[data-route="home"] [data-view="home"],
-  body[data-route="glutes"] [data-view="glutes"]{display:block}
+  body[data-route="program"] [data-view="program"]{display:block}
 
   /* home hero */
   .hero{padding-top:clamp(44px,8vw,88px);padding-bottom:clamp(56px,10vw,110px);overflow:hidden}
@@ -109,9 +109,11 @@
 
   /* program page hero */
   .p-hero{padding-top:clamp(36px,7vw,72px);padding-bottom:clamp(40px,7vw,80px)}
+  .eyebrow{color:var(--lilac);font-weight:600;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
   .back{display:inline-block;margin-bottom:22px;font-size:.95rem;opacity:.85;text-decoration:none}
   .back:hover{opacity:1;text-decoration:underline}
-  .p-hero h1{font-size:clamp(3.2rem,12vw,6.8rem);max-width:10ch}
+  .p-hero h1{font-size:clamp(2.6rem,9.5vw,5.2rem);max-width:16ch}
+  .price-note{margin-top:12px;font-size:.95rem;color:var(--lilac)}
   .p-hero .lead{font-size:1.2rem;margin:22px 0 28px}
   .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 24px;margin:0 0 30px;max-width:520px}
   .facts dt{font-size:.88rem;color:var(--lilac)}
@@ -195,7 +197,7 @@
     <a class="logo" href="#/" aria-label="LEAN home">LEAN</a>
     <nav class="nav-links" aria-label="Main">
       <a href="#programs" data-home-link>Programs</a>
-      <a href="#/glutes" class="nav-cta">Glutes program</a>
+      <a href="#" class="nav-cta" id="nav-contact">Message me</a>
     </nav>
   </div>
 </header>
@@ -208,9 +210,9 @@
     <div class="wrap hero-grid">
       <div>
         <h1>Train with a plan<span>that ends in week 4.</span></h1>
-        <p>Four-week training programs by Lynn. Clear sessions, set-by-set progression, and a version for the gym or for home. Delivered as a PDF the moment you buy.</p>
+        <p>Four starter programs by Lynn, each built to fix one common problem. They're general and temporary, and a good place to start. Each one is a PDF delivered the moment you buy.</p>
         <div class="hero-actions">
-          <a class="btn" href="#/glutes">See the glutes program</a>
+          <a class="btn" href="#programs">See the programs</a>
           <a class="btn btn-line" href="https://instagram.com/lynnmerhej.fit" target="_blank" rel="noopener">@lynnmerhej.fit</a>
         </div>
       </div>
@@ -236,7 +238,7 @@
       <div class="how">
         <div><strong>Pick a program</strong>One goal, one clear plan. No bundles of random workouts.</div>
         <div><strong>Pay once</strong>$30, no subscription. The PDF is yours to keep.</div>
-        <div><strong>Train for 4 weeks</strong>Follow the sheet, log your lifts, then repeat or move to the next program.</div>
+        <div><strong>Train for 4 weeks</strong>Follow the sheet and log your lifts. Then we have a one-on-one call to plan what's next.</div>
       </div>
     </div>
   </section>
@@ -246,7 +248,8 @@
       <div>
         <h2>Why these programs exist</h2>
         <p style="margin-bottom:12px">I train people in person. Along the way I kept meeting people who know their way around a gym but don't know how to build a plan, or who don't have the time to put one together.</p>
-        <p>These programs are that plan, already built. You open the PDF, follow the sessions, and skip the guesswork.</p>
+        <p style="margin-bottom:12px">These programs are that plan, already built. You open the PDF, follow the sessions, and skip the guesswork.</p>
+        <p>They're temporary starter plans, general on purpose. A program built around your own needs is always better, and that's what I do with my clients.</p>
       </div>
       <div>
         <h2>They're not for everyone</h2>
@@ -266,32 +269,42 @@
   </section>
 </div>
 
-<!-- ============ GLUTES ============ -->
-<div data-view="glutes">
+<!-- ============ PROGRAM (template, filled by script) ============ -->
+<div data-view="program">
   <section class="dark p-hero">
     <div class="wrap">
       <a class="back" href="#/">Back to all programs</a>
-      <h1>Glutes focused</h1>
-      <p class="lead">A four-week program built around the glutes. Heavy hip work early in the week, higher-rep pump work at the end, and enough leg training to keep the whole lower body balanced.</p>
-      <dl class="facts">
-        <div><dt>Length</dt><dd>4 weeks</dd></div>
-        <div><dt>Sessions</dt><dd>4 days a week</dd></div>
-        <div><dt>Where</dt><dd>Gym, home swaps included</dd></div>
-        <div><dt>Format</dt><dd>PDF, instant download</dd></div>
-      </dl>
+      <p class="eyebrow" id="p-eyebrow"></p>
+      <h1 id="p-title"></h1>
+      <p class="lead" id="p-lead"></p>
+      <dl class="facts" id="p-facts"></dl>
       <div class="buy-row">
-        <span class="price-big" data-price="glutes">$30</span>
-        <button class="btn" data-buy="glutes">Buy the program</button>
+        <span class="price-big" id="p-price"></span>
+        <button class="btn" data-buy>Buy the program</button>
       </div>
+      <p class="price-note">A coach-built plan for $30, plus a one-on-one call with me at the end.</p>
       <div class="notice" role="status" data-notice hidden></div>
       <p class="dm-line">Want a plan made just for you instead? <span data-contact-inline></span></p>
+    </div>
+  </section>
+
+  <section class="white">
+    <div class="wrap cols">
+      <div>
+        <h2>Read this first</h2>
+        <p style="margin-bottom:12px">This is a general starter program. It's temporary, built to fit common needs, and the same for everyone who buys it. It will get you moving and show you what works.</p>
+        <p>A program built around your own needs is always better, and that's what I build when we work together.</p>
+      </div>
+      <div style="align-self:center">
+        <div class="contact-row contact-row-light" data-contact></div>
+      </div>
     </div>
   </section>
 
   <section>
     <div class="wrap">
       <h2>Inside the week</h2>
-      <p style="margin-bottom:26px">Every session opens with the same 8-10 minute warm-up. Tap a day to see the focus and the first lifts.</p>
+      <p style="margin-bottom:26px">Every session opens with a short warm-up. Tap a day to see the focus and the first lifts.</p>
       <div class="week">
         <div class="tabs" role="tablist" aria-label="Training days" id="tabs"></div>
         <div class="day" id="day-panel" role="tabpanel" aria-live="polite"></div>
@@ -302,12 +315,7 @@
   <section class="dark">
     <div class="wrap">
       <h2>How the four weeks progress</h2>
-      <div class="prog-table">
-        <div class="prog-row"><b>Week 1</b><span class="what">Learn the lifts</span><span class="effort">Lower rep range, stop with about 3 reps left in the tank.</span></div>
-        <div class="prog-row"><b>Week 2</b><span class="what">Add load</span><span class="effort">Add a little weight or 1-2 reps, with about 2 reps left.</span></div>
-        <div class="prog-row"><b>Week 3</b><span class="what">Add volume</span><span class="effort">An extra set on the first two exercises each day, with 1-2 reps left.</span></div>
-        <div class="prog-row"><b>Week 4</b><span class="what">Push the top sets</span><span class="effort">Last set of each main lift goes close to failure, with good form.</span></div>
-      </div>
+      <div class="prog-table" id="p-progress"></div>
     </div>
   </section>
 
@@ -317,23 +325,17 @@
         <h2>What you get</h2>
         <ul class="checks">
           <li>A week-by-week PDF with sets, reps, rest, and progression</li>
-          <li>A warm-up and mobility sequence for every session</li>
-          <li>Home swaps for the gym-only lifts</li>
+          <li>A one-on-one call with me after week 4 to plan your next steps</li>
+          <li>A warm-up for every session</li>
+          <li>Options to swap exercises for different equipment</li>
           <li>A tracking sheet for your weights and reps</li>
           <li>A short guide on how to use the program and judge effort</li>
         </ul>
       </div>
       <div>
         <h2>Is it for you?</h2>
-        <ul class="checks">
-          <li>You can train 4 days a week for 4 weeks</li>
-          <li>You have access to a gym, or are happy with the home swaps</li>
-          <li>You want a plan to follow, not a coach checking in</li>
-        </ul>
-        <ul class="checks no" style="margin-top:18px">
-          <li>It's a training plan only. It has no meal plan or diet rules</li>
-          <li>It's built for lifters with some gym experience. A beginner program is planned</li>
-        </ul>
+        <ul class="checks" id="p-yes"></ul>
+        <ul class="checks no" id="p-no" style="margin-top:18px"></ul>
       </div>
     </div>
   </section>
@@ -341,8 +343,9 @@
   <section class="white">
     <div class="wrap cols">
       <div>
-        <h2>Need something personal?</h2>
-        <p>This program is the same for everyone who buys it, so it won't fit everyone. If you want a plan built around your own goal, schedule, injuries, or equipment, or you'd like to train with me in person, message me directly.</p>
+        <h2>Your one-on-one call after week 4</h2>
+        <p style="margin-bottom:12px">Every program includes a one-on-one call with me at the end of your four weeks. We'll go through your results and talk about what to do next.</p>
+        <p>Everyone's body, schedule, and goals are different, so a program built around your needs will always work better than a general one. That's what we'll plan on the call, or we can train together in person.</p>
       </div>
       <div style="align-self:center">
         <div class="contact-row contact-row-light" data-contact></div>
@@ -353,20 +356,22 @@
   <section>
     <div class="wrap">
       <h2>Questions</h2>
-      <details><summary>What equipment do I need?</summary><p>A barbell, dumbbells, a bench, a cable machine, and a few machines such as leg press and leg extension. The PDF lists home swaps that need only a bench or couch, dumbbells, and resistance bands.</p></details>
-      <details><summary>How do I get the program?</summary><p>You'll get a download link right after payment. The program is a PDF you can keep on your phone.</p></details>
-      <details><summary>Can I get a program made just for me?</summary><p>Yes. Message me on WhatsApp or Instagram with your goal, how many days you can train, and your equipment. Personalized programs are separate from this $30 one and priced individually. I also train people in person.</p></details>
-      <details><summary>Is it a subscription?</summary><p>No. You pay $30 once.</p></details>
-      <details><summary>What if I have an injury or a medical condition?</summary><p>Check with your doctor or physiotherapist before starting any training program.</p></details>
-      <details><summary>What do I do after four weeks?</summary><p>Repeat the program with heavier weights, or move on to the next program when it's released.</p></details>
+      <div id="p-faq"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Other programs</h2>
+      <div class="programs" id="p-others"></div>
     </div>
   </section>
 
   <section class="dark">
     <div class="wrap final">
       <h2>Start week 1 today.</h2>
-      <p style="margin-bottom:26px">Four sessions a week, one clear plan, $30.</p>
-      <button class="btn" data-buy="glutes">Buy the program</button>
+      <p style="margin-bottom:26px">One clear plan, four weeks, $30. Then a one-on-one call with me to plan what's next.</p>
+      <button class="btn" data-buy>Buy the program</button>
       <div class="notice" role="status" data-notice hidden></div>
     </div>
   </section>
@@ -388,24 +393,109 @@ const CONFIG = {
   instagramDM: "https://ig.me/m/lynnmerhej.fit",
   whatsapp: "", /* your number with country code, digits only, e.g. "961XXXXXXXX" */
   whatsappMessage: "Hi Lynn, I'd like to ask about a personalized program.",
-  programs: [
-    { id:"glutes",  title:"Glutes focused", blurb:"4 weeks, 4 days a week. Built around the glutes, with legs trained too.", price:"$30", live:true,
-      checkout:"" /* paste your checkout link here once your payment provider is ready */ },
-    { id:"muscle",  title:"Muscle building",     blurb:"A four-week hypertrophy program.", price:"Coming soon", live:false },
-    { id:"fatloss", title:"Fat-loss training",   blurb:"Strength and conditioning sessions.", price:"Coming soon", live:false },
-    { id:"home",    title:"Beginner & home",     blurb:"Minimal equipment, built for starting out.", price:"Coming soon", live:false }
+
+  /* default 4-week progression (a program can override with its own "progress") */
+  progress: [
+    ["Learn the lifts", "Lower rep range, stop with about 3 reps left in the tank."],
+    ["Add load", "Add a little weight or 1-2 reps, with about 2 reps left."],
+    ["Add volume", "An extra set on the first two exercises each day, with 1-2 reps left."],
+    ["Push the top sets", "Last set of each main lift goes close to failure, with good form."]
   ],
-  glutesDays: [
-    { tab:"Day 1", name:"Glute strength", sub:"Heavy hip work with long rests.",
-      show:[["Barbell hip thrust","4 x 6-8"],["Romanian deadlift","3 x 8-10"],["Bulgarian split squat","3 x 8-10 / leg"]], more:2 },
-    { tab:"Day 2", name:"Quads & glute med", sub:"Squat patterns and single-leg work.",
-      show:[["Goblet or barbell squat","4 x 8-10"],["Walking lunges","3 x 10 / leg"],["Leg press, feet high and wide","3 x 12"]], more:2 },
-    { tab:"Day 3", name:"Hamstrings & glutes", sub:"Hinge patterns and hamstring work.",
-      show:[["Sumo or conventional deadlift","3 x 6-8"],["Hamstring curl","3 x 10-12"],["Reverse lunge","3 x 10 / leg"]], more:2 },
-    { tab:"Day 4", name:"Glute pump", sub:"Higher reps, shorter rests, big finish.",
-      show:[["Single-leg hip thrust","3 x 10 / leg"],["Frog pumps","3 x 20-25"],["Curtsy lunge","3 x 12 / leg"]], more:2 }
+
+  programs: [
+    {
+      id: "lean-strong", title: "Lean & Strong", price: "$30", checkout: "", /* paste checkout link here */
+      blurb: "Random workouts, no change? A structured plan.",
+      headline: "Doing random workouts and not seeing change?",
+      lead: "Lean & Strong gives you a structured four-week plan that mixes strength and conditioning, so every session has a purpose. Training only, with no diet rules.",
+      facts: [["Length","4 weeks"],["Sessions","4 days a week"],["Where","Gym, home options"],["Format","PDF, instant download"]],
+      days: [
+        { tab:"Day 1", name:"Lower body strength", sub:"Build the base with big leg movements.",
+          show:[["Goblet squat","4 x 8-10"],["Romanian deadlift","3 x 10"],["Walking lunge","3 x 10 / leg"]], more:2 },
+        { tab:"Day 2", name:"Upper body & core", sub:"Push, pull, and core work.",
+          show:[["Dumbbell bench press or push-up","4 x 8-12"],["One-arm dumbbell row","3 x 10 / arm"],["Dumbbell shoulder press","3 x 10"]], more:2 },
+        { tab:"Day 3", name:"Conditioning circuit", sub:"Higher heart rate, shorter rests.",
+          show:[["Kettlebell or dumbbell swing","4 x 15"],["Step-ups","3 x 12 / leg"],["Mountain climbers","3 x 30 sec"]], more:2 },
+        { tab:"Day 4", name:"Full body", sub:"Everything together to finish the week.",
+          show:[["Deadlift","3 x 6-8"],["Lat pulldown or pull-up","3 x 8-10"],["Split squat","3 x 10 / leg"]], more:2 }
+      ],
+      yes: ["You can train 4 days a week for 4 weeks","You have a gym, or are happy with the home options","You want a plan to follow, not a coach checking in"],
+      no: ["It's built for people who already know the basic lifts"],
+      equipment: "At a gym: dumbbells, a bench, a barbell or machines, and a cable machine. The PDF lists home swaps that need only dumbbells and a resistance band."
+    },
+    {
+      id: "home", title: "Home Workouts", price: "$30", checkout: "",
+      blurb: "No time? 10-minute sessions at home.",
+      headline: "No time to train? Do it at home.",
+      lead: "Home Workouts gives you four weeks of sessions you can do in your living room, and every session has a 10-minute version for busy days. Private, simple, and no gym needed.",
+      facts: [["Length","4 weeks"],["Sessions","4 days, 20-40 min"],["Where","At home, no gym"],["Format","PDF, instant download"]],
+      days: [
+        { tab:"Day 1", name:"Lower body", sub:"Legs and glutes with your own bodyweight.",
+          show:[["Squat","4 x 12-15"],["Reverse lunge","3 x 10 / leg"],["Glute bridge","3 x 15"]], more:2 },
+        { tab:"Day 2", name:"Upper body", sub:"Push and pull with bodyweight and a band.",
+          show:[["Push-up (any variation)","4 x 8-15"],["Band row","3 x 12-15"],["Pike push-up","3 x 8-10"]], more:2 },
+        { tab:"Day 3", name:"Core & cardio", sub:"Short, sweaty, and simple.",
+          show:[["Plank","3 x 30-45 sec"],["Mountain climbers","3 x 30 sec"],["Squat jumps","3 x 12"]], more:2 },
+        { tab:"Day 4", name:"Full-body circuit", sub:"The whole body in one session.",
+          show:[["Split squat","3 x 10 / leg"],["Single-leg hip hinge","3 x 10 / leg"],["Incline push-up","3 x 12"]], more:2 }
+      ],
+      yes: ["You want to train at home, with little or no equipment","You have 20-40 minutes a few times a week","You want a plan to follow, not a coach checking in"],
+      no: ["It uses light equipment, so it's not built for lifting heavy"],
+      equipment: "Nothing is required. A resistance band and a pair of dumbbells make it better, and the PDF shows how to do each session without them."
+    },
+    {
+      id: "gym-starter", title: "Gym Starter", price: "$30", checkout: "",
+      blurb: "Lost in the gym? A plan for your first month.",
+      headline: "Don't know what to do in the gym?",
+      lead: "Gym Starter gives you a written plan for your first four weeks, so you walk in knowing exactly what to do. Simple sessions that teach you the machines, the basic lifts, and good form.",
+      facts: [["Length","4 weeks"],["Sessions","3 days a week"],["Where","The gym"],["Format","PDF, instant download"]],
+      progress: [
+        ["Learn the moves", "Light weights. Focus on form and getting comfortable with the machines."],
+        ["Add a little weight", "Increase the weight slightly when the last reps feel easy."],
+        ["Add a set", "An extra set on the first exercise each day."],
+        ["Repeat and compare", "Repeat the week and compare your weights to week 1."]
+      ],
+      days: [
+        { tab:"Day 1", name:"Lower body basics", sub:"Machines and simple free weights.",
+          show:[["Leg press","3 x 10-12"],["Goblet squat","3 x 10"],["Seated hamstring curl","3 x 12"]], more:2 },
+        { tab:"Day 2", name:"Upper body basics", sub:"Push and pull on machines and cables.",
+          show:[["Chest press machine","3 x 10-12"],["Lat pulldown","3 x 10-12"],["Seated dumbbell shoulder press","3 x 10"]], more:2 },
+        { tab:"Day 3", name:"Full body", sub:"Put it all together.",
+          show:[["Dumbbell Romanian deadlift","3 x 10"],["Seated cable row","3 x 12"],["Walking lunge","2 x 10 / leg"]], more:2 }
+      ],
+      yes: ["You're new to the gym, or feel lost when you walk in","You can train 3 days a week for 4 weeks","You want simple sessions that teach you the basics"],
+      no: ["It's built for beginners. If you've trained for years, try Full-Body Strength"],
+      equipment: "A normal gym with machines, cables, and dumbbells."
+    },
+    {
+      id: "full-body-strength", title: "Full-Body Strength", price: "$30", checkout: "",
+      blurb: "Not getting stronger? Clear weekly targets.",
+      headline: "Training but not getting stronger?",
+      lead: "Full-Body Strength gives you three sessions a week and a clear target for what to lift each week, so you always know when to add weight.",
+      facts: [["Length","4 weeks"],["Sessions","3 days a week"],["Where","The gym"],["Format","PDF, instant download"]],
+      progress: [
+        ["Set your base", "Start light enough to move well, with 2-3 reps left."],
+        ["Add weight", "Add weight to the main lifts."],
+        ["Heavier sets", "Work up to heavier top sets, keeping 1-2 reps left."],
+        ["Top sets", "One heavy top set on each main lift, with good form."]
+      ],
+      days: [
+        { tab:"Day A", name:"Squat & push", sub:"Heavy legs and chest to start.",
+          show:[["Squat","4 x 5-6"],["Bench press","4 x 5-6"],["Barbell row","3 x 8"]], more:2 },
+        { tab:"Day B", name:"Hinge & press", sub:"Deadlift day with overhead work.",
+          show:[["Deadlift","3 x 5"],["Overhead press","3 x 6-8"],["Pull-up or lat pulldown","3 x 8-10"]], more:2 },
+        { tab:"Day C", name:"Volume day", sub:"Lighter weights, more reps.",
+          show:[["Goblet or front squat","3 x 8"],["Incline dumbbell press","3 x 8-10"],["Hip thrust","3 x 8-10"]], more:2 }
+      ],
+      yes: ["You know the basic lifts and want to get stronger","You can train 3 days a week for 4 weeks","You want a plan with clear targets to follow"],
+      no: ["It's not built for complete beginners. Start with Gym Starter if you're new"],
+      equipment: "A barbell, a rack, a bench, and dumbbells. Pull-ups or a lat pulldown for the back."
+    }
   ]
 };
+
+const $ = s => document.querySelector(s);
+let current = null;
 
 /* ---------- Contact buttons (WhatsApp + Instagram) ---------- */
 const waLink = CONFIG.whatsapp ? "https://wa.me/"+CONFIG.whatsapp.replace(/\D/g,"")+"?text="+encodeURIComponent(CONFIG.whatsappMessage) : "";
@@ -414,62 +504,100 @@ document.querySelectorAll("[data-contact]").forEach(box=>{
     '<a class="btn '+(waLink?'btn-line':'')+'" href="'+CONFIG.instagramDM+'" target="_blank" rel="noopener">Message me on Instagram</a>';
 });
 document.querySelectorAll("[data-contact-inline]").forEach(el=>{
-  el.innerHTML = (waLink ? '<a href="'+waLink+'" target="_blank" rel="noopener">Message me on WhatsApp</a> or <a href="'+CONFIG.instagramDM+'" target="_blank" rel="noopener">Instagram</a>.' :
-    '<a href="'+CONFIG.instagramDM+'" target="_blank" rel="noopener">Message me directly</a>.');
+  el.innerHTML = waLink
+    ? '<a href="'+waLink+'" target="_blank" rel="noopener">Message me on WhatsApp</a> or <a href="'+CONFIG.instagramDM+'" target="_blank" rel="noopener">Instagram</a>.'
+    : '<a href="'+CONFIG.instagramDM+'" target="_blank" rel="noopener">Message me directly</a>.';
 });
+$("#nav-contact").href = waLink || CONFIG.instagramDM;
+$("#nav-contact").target = "_blank";
+$("#nav-contact").rel = "noopener";
 
-/* ---------- Program list (home) ---------- */
-const list = document.getElementById("program-list");
-CONFIG.programs.forEach(p=>{
-  const el = document.createElement(p.live ? "a" : "div");
-  el.className = "prog " + (p.live ? "live" : "soon");
-  if(p.live) el.href = "#/" + p.id;
-  el.innerHTML = (p.live ? '<span class="tag" style="grid-column:1">Available now</span>' : '') +
-    '<h3>'+p.title+'</h3><p>'+p.blurb+'</p><span class="price">'+p.price+'</span>';
-  list.appendChild(el);
-});
-
-/* ---------- Sample week tabs ---------- */
-const tabs = document.getElementById("tabs");
-const panel = document.getElementById("day-panel");
-function showDay(i){
-  [...tabs.children].forEach((t,k)=>t.setAttribute("aria-selected", k===i));
-  const d = CONFIG.glutesDays[i];
-  panel.innerHTML = '<h3>'+d.name+'</h3><p class="sub">'+d.sub+'</p><ul class="lifts">' +
-    d.show.map(x=>'<li><span>'+x[0]+'</span><span>'+x[1]+'</span></li>').join('') +
-    '<li class="locked"><span>+ '+d.more+' more exercises</span><span>In the PDF</span></li></ul>';
+/* ---------- Program cards ---------- */
+function card(p){
+  return '<a class="prog" href="#/p/'+p.id+'"><h3>'+p.title+'</h3><p>'+p.blurb+'</p><span class="price">'+p.price+'</span></a>';
 }
-CONFIG.glutesDays.forEach((d,i)=>{
-  const b = document.createElement("button");
-  b.className="tab"; b.type="button"; b.setAttribute("role","tab"); b.textContent=d.tab;
-  b.onclick=()=>showDay(i);
-  tabs.appendChild(b);
-});
-showDay(0);
+$("#program-list").innerHTML = CONFIG.programs.map(card).join("");
+
+/* ---------- Program page ---------- */
+function renderProgram(p){
+  $("#p-eyebrow").textContent = p.title + " · Starter program";
+  $("#p-title").textContent = p.headline;
+  $("#p-lead").textContent = p.lead;
+  $("#p-price").textContent = p.price;
+  $("#p-facts").innerHTML = p.facts.map(f=>'<div><dt>'+f[0]+'</dt><dd>'+f[1]+'</dd></div>').join("");
+
+  const tabs = $("#tabs"), panel = $("#day-panel");
+  tabs.innerHTML = "";
+  const showDay = i => {
+    [...tabs.children].forEach((t,k)=>t.setAttribute("aria-selected", k===i));
+    const d = p.days[i];
+    panel.innerHTML = '<h3>'+d.name+'</h3><p class="sub">'+d.sub+'</p><ul class="lifts">' +
+      d.show.map(x=>'<li><span>'+x[0]+'</span><span>'+x[1]+'</span></li>').join("") +
+      '<li class="locked"><span>+ '+d.more+' more exercises</span><span>In the PDF</span></li></ul>';
+  };
+  p.days.forEach((d,i)=>{
+    const b = document.createElement("button");
+    b.className = "tab"; b.type = "button"; b.setAttribute("role","tab"); b.textContent = d.tab;
+    b.onclick = () => showDay(i);
+    tabs.appendChild(b);
+  });
+  showDay(0);
+
+  const prog = p.progress || CONFIG.progress;
+  $("#p-progress").innerHTML = prog.map((r,i)=>
+    '<div class="prog-row"><b>Week '+(i+1)+'</b><span class="what">'+r[0]+'</span><span class="effort">'+r[1]+'</span></div>').join("");
+
+  $("#p-yes").innerHTML = p.yes.map(t=>'<li>'+t+'</li>').join("");
+  $("#p-no").innerHTML = ["It's a training plan only. It has no meal plan or diet rules"].concat(p.no || []).map(t=>'<li>'+t+'</li>').join("");
+
+  const faq = [
+    ["What equipment do I need?", p.equipment],
+    ["How do I get the program?", "You'll get a download link right after payment. The program is a PDF you can keep on your phone."],
+    ["Can I get a program made just for me?", "Yes. Message me on WhatsApp or Instagram with your goal, how many days you can train, and your equipment. A program built around your needs is always better than a general one, so it's the best next step. Personalized programs are separate from this $30 one and priced individually. I also train people in person."],
+    ["Is it a subscription?", "No. You pay $30 once."],
+    ["What if I have an injury or a medical condition?", "Check with your doctor or physiotherapist before starting any training program."],
+    ["What happens after four weeks?", "You get a one-on-one call with me. Send me your week 1 and week 4 numbers and how it felt, and we'll go through them together and plan your next steps. That could be a personalized program or training with me in person. You can also repeat the program with heavier weights."]
+  ];
+  $("#p-faq").innerHTML = faq.map(q=>'<details><summary>'+q[0]+'</summary><p>'+q[1]+'</p></details>').join("");
+
+  $("#p-others").innerHTML = CONFIG.programs.filter(x=>x.id!==p.id).map(card).join("");
+  document.querySelectorAll("[data-notice]").forEach(n=>n.hidden = true);
+}
 
 /* ---------- Buy buttons ---------- */
-document.querySelectorAll("[data-buy]").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    const p = CONFIG.programs.find(x=>x.id===btn.dataset.buy);
-    if(p && p.checkout){ window.location.href = p.checkout; return; }
-    document.querySelectorAll("[data-notice]").forEach(n=>{
-      n.hidden=false;
-      n.innerHTML = 'Checkout isn\'t open yet. Message me to get the program now: ' + (waLink ? '<a href="'+waLink+'" target="_blank" rel="noopener">WhatsApp</a> or ' : '') + '<a href="'+CONFIG.instagramDM+'" target="_blank" rel="noopener">Instagram</a>.';
-    });
+document.addEventListener("click", e=>{
+  const btn = e.target.closest("[data-buy]");
+  if(!btn || !current) return;
+  if(current.checkout){ window.location.href = current.checkout; return; }
+  document.querySelectorAll("[data-notice]").forEach(n=>{
+    n.hidden = false;
+    n.innerHTML = 'Checkout isn\'t open yet. Message me to get the program now: ' +
+      (waLink ? '<a href="'+waLink+'" target="_blank" rel="noopener">WhatsApp</a> or ' : '') +
+      '<a href="'+CONFIG.instagramDM+'" target="_blank" rel="noopener">Instagram</a>.';
   });
 });
 
 /* ---------- Router ---------- */
 function route(){
   const h = location.hash;
-  const r = h.startsWith("#/glutes") ? "glutes" : "home";
-  document.body.dataset.route = r;
-  document.title = r==="glutes" ? "Glutes focused — LEAN" : "LEAN — Training programs by Lynn";
-  if(h==="#programs"){ setTimeout(()=>document.getElementById("programs").scrollIntoView(),0); }
-  else window.scrollTo(0,0);
+  const m = h.match(/^#\/p\/([\w-]+)/);
+  const p = m && CONFIG.programs.find(x=>x.id===m[1]);
+  if(p){
+    current = p;
+    renderProgram(p);
+    document.body.dataset.route = "program";
+    document.title = p.title + " — LEAN";
+    window.scrollTo(0,0);
+  } else {
+    current = null;
+    document.body.dataset.route = "home";
+    document.title = "LEAN — Training programs by Lynn";
+    if(h==="#programs"){ setTimeout(()=>$("#programs").scrollIntoView(),0); }
+    else window.scrollTo(0,0);
+  }
 }
 document.querySelector("[data-home-link]").addEventListener("click",e=>{
-  if(document.body.dataset.route!=="home"){ e.preventDefault(); location.hash="#/"; setTimeout(()=>document.getElementById("programs").scrollIntoView(),50); }
+  if(document.body.dataset.route!=="home"){ e.preventDefault(); location.hash="#/"; setTimeout(()=>$("#programs").scrollIntoView(),50); }
 });
 window.addEventListener("hashchange",route);
 route();
