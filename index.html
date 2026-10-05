@@ -79,6 +79,7 @@
   body[data-route="home"] [data-view="home"],
   body[data-route="program"] [data-view="program"]{display:block}
   body[data-route="thanks"] [data-view="thanks"]{display:block}
+  body[data-route="page"] [data-view="page"]{display:block}
 
   /* home hero */
   .hero{padding-top:clamp(44px,8vw,88px);padding-bottom:clamp(56px,10vw,110px);overflow:hidden}
@@ -145,6 +146,13 @@
   .contact-row{display:flex;gap:12px;flex-wrap:wrap}
   .contact-row-light .btn-line{color:var(--ink)}
   .notice a{color:var(--volt);font-weight:600}
+  .pay-panel b.pay-title{display:block;font-size:1.05rem;margin-bottom:6px}
+  .pay-panel .pay-steps{margin:0 0 14px;color:#E7DCEE;font-size:.95rem}
+  .pay-panel .contact-row a{text-decoration:none}
+  .notice a.btn{color:var(--ink)}
+  .notice a.btn-line{color:#fff}
+  .notice a.btn-line:hover{color:var(--midnight)}
+  .pay-panel .pay-note{margin-top:12px;font-size:.88rem;color:var(--lilac)}
   .light-notice{background:var(--plum);}
 
   /* week preview */
@@ -160,6 +168,22 @@
   .lifts li span:last-child{font-family:var(--display);font-weight:800;font-size:1.3rem;white-space:nowrap}
   .lifts li.locked{color:#8A7B94;font-weight:400;font-style:normal}
   .lifts li.locked span:last-child{font-family:var(--body);font-size:.9rem;font-weight:500}
+
+  /* policy pages */
+  .legal{max-width:760px}
+  .legal h1{font-size:clamp(2.6rem,9vw,4.4rem);margin-bottom:10px}
+  .legal h2{font-size:1.7rem;margin:30px 0 8px}
+  .legal p,.legal li{max-width:68ch;color:#3B3150}
+  .legal p+p{margin-top:10px}
+  .legal ul{padding-left:20px}
+  .legal li{margin:6px 0}
+  .legal a{color:var(--nightshade);font-weight:600}
+  .legal .contact-row a{color:inherit}
+  .legal .contact-row a.btn{color:var(--ink)}
+  .updated{font-size:.9rem;color:#6A5A74}
+  .foot-links{display:flex;flex-wrap:wrap;gap:8px 18px}
+  .pay-terms{margin-top:6px;font-size:.85rem;color:#D9C9E3}
+  .pay-terms a{color:#fff;text-decoration:underline}
 
   /* thank-you page */
   .steps{list-style:none;counter-reset:s;display:grid;gap:16px;margin-top:28px;max-width:560px}
@@ -419,15 +443,23 @@
   </section>
 </div>
 
+<!-- ============ POLICY & CONTACT PAGES ============ -->
+<div data-view="page">
+  <section class="white">
+    <div class="wrap legal" id="page-body"></div>
+  </section>
+</div>
+
 <!-- ============ THANK YOU (after purchase) ============ -->
 <div data-view="thanks">
+  <div id="thanks-open" hidden>
   <section class="dark p-hero">
     <div class="wrap">
       <p class="eyebrow">Thank you</p>
       <h1>You're in.</h1>
       <p class="lead">Thank you for buying. Here's what happens next.</p>
       <ol class="steps">
-        <li><div><b>Check your email</b><span>Your program is sent to the email you used at checkout.</span></div></li>
+        <li><div><b>Get your program</b><span>I send it to you directly, by WhatsApp or email.</span></div></li>
         <li><div><b>Book your one-on-one call</b><span>Pick an evening that suits you, below. Choose a date about four weeks from today, right after you finish.</span></div></li>
         <li><div><b>Train for four weeks</b><span>Follow the plan and write down your numbers in week 1 and week 4.</span></div></li>
         <li><div><b>Send me your results</b><span>Before the call, so we can plan what's next together.</span></div></li>
@@ -438,7 +470,7 @@
   <section class="white">
     <div class="wrap">
       <h2>Book your call</h2>
-      <p>Calls are in the evening, after 6 pm Beirut time. You'll see the available times in your own time zone, and a confirmation goes to your email.</p>
+      <p>Calls are in the evening, after 6 pm Beirut time. You'll see the available times in your own time zone, and Calendly emails you a confirmation.</p>
       <div class="cal-box" id="cal-box"></div>
     </div>
   </section>
@@ -455,13 +487,29 @@
     </div>
   </section>
 </div>
+  <section class="dark p-hero" id="thanks-locked" hidden>
+    <div class="wrap">
+      <p class="eyebrow">Buyers only</p>
+      <h1>This page is for people who bought a program.</h1>
+      <p class="lead">If you bought one, open the link from your purchase confirmation. If you can't find it, message me and I'll send it to you.</p>
+      <div class="contact-row" data-contact></div>
+      <p class="dm-line"><a href="#/">Back to the programs</a></p>
+    </div>
+  </section>
+</div>
 
 </main>
 
 <footer>
   <div class="wrap">
-    <span>LEAN by Lynn Merhej</span>
-    <span><a href="https://instagram.com/lynnmerhej.fit" target="_blank" rel="noopener">@lynnmerhej.fit</a></span>
+    <span>LEAN by Lynn Merhej &middot; Lebanon</span>
+    <nav class="foot-links" aria-label="Policies">
+      <a href="#/terms">Terms of sale</a>
+      <a href="#/refunds">Refund policy</a>
+      <a href="#/privacy">Privacy policy</a>
+      <a href="#/contact">Contact</a>
+      <a href="https://instagram.com/lynnmerhej.fit" target="_blank" rel="noopener">@lynnmerhej.fit</a>
+    </nav>
   </div>
 </footer>
 
@@ -470,7 +518,9 @@
 const CONFIG = {
   instagram: "https://instagram.com/lynnmerhej.fit",
   instagramDM: "https://ig.me/m/lynnmerhej.fit",
-  calendly: "https://calendly.com/lynn-merhej/next-steps-call", /* your Calendly event link */
+  bookingIv: "WyWfE3ejhgx8bYus", /* encrypted booking link: only opens with the private thank-you URL */
+  bookingData: "fuH9md9xaLcnfMlqWllLmNJPZ76k7Aa8g62vOD0GG/5jKvHPOhAoomr+agvXBFbKiFjs7jje72Gest7XK4WK9w==",
+  email: "", /* optional: a contact email shown on the policy and contact pages */
   whatsapp: "96171868604", /* your number with country code, digits only */
   whatsappMessage: "Hi Lynn, I'd like to ask about a personalized program.",
 
@@ -648,7 +698,7 @@ function renderProgram(p){
 
   const faq = [
     ["What equipment do I need?", p.equipment],
-    ["How do I get the program?", "You'll get a download link right after payment. You can keep the program on your phone."],
+    ["How do I pay and get the program?", "Tap Buy and message me on WhatsApp. Outside Lebanon, you can pay to my Whish wallet using a transfer app such as Ria or Taptap Send, with your card or Apple Pay. In Lebanon, you can pay with Whish or by bank transfer. Once your payment arrives, I'll send you the program and your call booking link."],
     ["Can I get a program made just for me?", "Yes. Message me on WhatsApp or Instagram with your goal, how many days you can train, and your equipment. A program built around your needs is always better than a general one, so it's the best next step. Personalized programs are separate from this $30 one and priced individually. I also train people in person."],
     ["Is it a subscription?", "No. You pay $30 once."],
     ["What if I have an injury or a medical condition?", "Check with your doctor or physiotherapist before starting any training program."],
@@ -662,40 +712,136 @@ function renderProgram(p){
 
 /* ---------- Thank-you page: Calendly booking ---------- */
 let calendlyLoaded = false;
-function renderThanks(){
+async function unlockBooking(token){
+  try{
+    if(!token || !window.crypto || !crypto.subtle) return null;
+    const b64 = x => Uint8Array.from(atob(x), c=>c.charCodeAt(0));
+    const keyBytes = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(token));
+    const key = await crypto.subtle.importKey("raw", keyBytes, "AES-GCM", false, ["decrypt"]);
+    const buf = await crypto.subtle.decrypt({name:"AES-GCM", iv:b64(CONFIG.bookingIv)}, key, b64(CONFIG.bookingData));
+    return new TextDecoder().decode(buf);
+  }catch(e){ return null; }
+}
+async function renderThanks(token){
+  const open = $("#thanks-open"), locked = $("#thanks-locked");
+  open.hidden = true; locked.hidden = true;
+  $("#cal-box").innerHTML = "";
+  const link = await unlockBooking(token);
+  if(!link){ locked.hidden = false; return; }
+  open.hidden = false;
   const box = $("#cal-box");
-  if(CONFIG.calendly){
-    const url = CONFIG.calendly + (CONFIG.calendly.includes("?") ? "&" : "?") + "hide_gdpr_banner=1";
-    box.innerHTML = '<div class="calendly-inline-widget" data-url="'+url+'"></div>';
-    if(!calendlyLoaded){
-      const sc = document.createElement("script");
-      sc.src = "https://assets.calendly.com/assets/external/widget.js";
-      sc.async = true;
-      document.body.appendChild(sc);
-      calendlyLoaded = true;
-    } else if(window.Calendly && window.Calendly.initInlineWidget){
-      window.Calendly.initInlineWidget({url: url, parentElement: box.querySelector(".calendly-inline-widget")});
-    }
-  } else {
-    box.innerHTML = '<div class="cal-soon"><p>Booking opens soon. Message me and I\'ll set up your call.</p><div class="contact-row contact-row-light" style="margin-top:14px" data-contact-late></div></div>';
-    const late = box.querySelector("[data-contact-late]");
-    late.innerHTML = (waLink ? '<a class="btn" href="'+waLink+'" target="_blank" rel="noopener">Message me on WhatsApp</a>' : '') +
-      '<a class="btn '+(waLink?'btn-line':'')+'" href="'+CONFIG.instagramDM+'" target="_blank" rel="noopener">Message me on Instagram</a>';
+  const url = link + (link.includes("?") ? "&" : "?") + "hide_gdpr_banner=1";
+  box.innerHTML = '<div class="calendly-inline-widget" data-url="'+url+'"></div>';
+  if(!calendlyLoaded){
+    const sc = document.createElement("script");
+    sc.src = "https://assets.calendly.com/assets/external/widget.js";
+    sc.async = true;
+    document.body.appendChild(sc);
+    calendlyLoaded = true;
+  } else if(window.Calendly && window.Calendly.initInlineWidget){
+    window.Calendly.initInlineWidget({url: url, parentElement: box.querySelector(".calendly-inline-widget")});
   }
 }
 
-/* ---------- Buy buttons ---------- */
+/* ---------- Buy buttons: Whish or bank transfer via WhatsApp ---------- */
+function payLink(method){
+  const msg = "Hi Lynn, I'd like to buy " + current.title + " (" + current.price + ") and pay " + method + ".";
+  return "https://wa.me/" + CONFIG.whatsapp.replace(/\D/g,"") + "?text=" + encodeURIComponent(msg);
+}
 document.addEventListener("click", e=>{
   const btn = e.target.closest("[data-buy]");
   if(!btn || !current) return;
   if(current.checkout){ window.location.href = current.checkout; return; }
   document.querySelectorAll("[data-notice]").forEach(n=>{
     n.hidden = false;
-    n.innerHTML = 'Checkout isn\'t open yet. Message me to get the program now: ' +
-      (waLink ? '<a href="'+waLink+'" target="_blank" rel="noopener">WhatsApp</a> or ' : '') +
-      '<a href="'+CONFIG.instagramDM+'" target="_blank" rel="noopener">Instagram</a>.';
+    n.classList.add("pay-panel");
+    n.innerHTML =
+      '<b class="pay-title">How to pay</b>' +
+      '<p class="pay-steps">Message me on WhatsApp and I\'ll send you my payment details. Once your payment arrives, I\'ll send you the program and your call booking link.</p>' +
+      '<p class="pay-steps"><b>Outside Lebanon (GCC and MENA):</b> pay to my Whish wallet using a transfer app such as Ria or Taptap Send, with your card or Apple Pay. Availability depends on your country.</p>' +
+      '<p class="pay-steps"><b>In Lebanon:</b> Whish or bank transfer.</p>' +
+      '<div class="contact-row">' +
+        '<a class="btn" href="'+payLink("with Whish")+'" target="_blank" rel="noopener">Pay with Whish</a>' +
+        '<a class="btn btn-line" href="'+payLink("by bank transfer")+'" target="_blank" rel="noopener">Bank transfer (Lebanon)</a>' +
+      '</div>' +
+      '<p class="pay-note">Direct card payment on this site is coming soon.</p>' +
+      '<p class="pay-terms">By buying, you agree to the <a href="#/terms">Terms of sale</a> and <a href="#/refunds">Refund policy</a>.</p>';
   });
 });
+
+/* ---------- Policy & contact pages ---------- */
+const UPDATED = "5 October 2026";
+function contactLines(){
+  const wa = waLink ? '<a href="'+waLink+'" target="_blank" rel="noopener">WhatsApp +961 71 868 604</a>' : '';
+  const ig = '<a href="'+CONFIG.instagram+'" target="_blank" rel="noopener">Instagram @lynnmerhej.fit</a>';
+  const em = CONFIG.email ? '<a href="mailto:'+CONFIG.email+'">'+CONFIG.email+'</a>' : '';
+  return [wa, ig, em].filter(Boolean).join(" &middot; ");
+}
+const PAGES = {
+  terms: { title: "Terms of sale", html: () => `
+    <p class="updated">Last updated: ${UPDATED}</p>
+    <h2>Who you are buying from</h2>
+    <p>LEAN is run by Lynn Merhej, a fitness coach based in Lebanon. Contact: ${contactLines()}.</p>
+    <h2>What you are buying</h2>
+    <p>Each program is a four-week training plan delivered digitally, plus one one-on-one call with me after you finish. The programs are general and the same for everyone who buys them. They are not personalized.</p>
+    <h2>Prices and payment</h2>
+    <p>Prices are in US dollars and shown on each program page. You can pay with Whish or by bank transfer, and by card when card payment is available. Your order is confirmed once your payment arrives.</p>
+    <h2>Delivery</h2>
+    <p>I send your program by WhatsApp or email within 48 hours of your payment being confirmed, together with the link to book your call.</p>
+    <h2>Your one-on-one call</h2>
+    <p>Each purchase includes one call, booked through the link you receive. Calls are held in the evening, after 6 pm Beirut time. Please book within 60 days of your purchase. You can reschedule through your booking confirmation. If you miss a call without notice, it may not be rescheduled.</p>
+    <h2>Health and safety</h2>
+    <p>The programs are general fitness guidance, not medical advice. Check with your doctor before starting, especially if you have an injury, a medical condition, or are pregnant. Train within your limits and stop if you feel pain or dizziness. You take part at your own risk, and to the extent the law allows, my liability is limited to the amount you paid.</p>
+    <h2>Using the program</h2>
+    <p>Your program is for your personal use only. Please don't share, resell, or publish it. All content belongs to Lynn Merhej.</p>
+    <h2>Refunds</h2>
+    <p>See the <a href="#/refunds">Refund policy</a>.</p>
+    <h2>Changes and governing law</h2>
+    <p>I may update these terms. The version shown when you buy applies to your purchase. These terms are governed by the laws of Lebanon.</p>` },
+
+  refunds: { title: "Refund policy", html: () => `
+    <p class="updated">Last updated: ${UPDATED}</p>
+    <h2>Digital products</h2>
+    <p>Because the programs are digital and can't be returned, all sales are final once your program has been sent.</p>
+    <h2>When you get a full refund</h2>
+    <ul>
+      <li>You paid but didn't receive your program within 48 hours.</li>
+      <li>The file doesn't work and I can't fix it within 48 hours of you telling me.</li>
+      <li>You paid twice for the same program. The duplicate payment is refunded.</li>
+      <li>You ask to cancel before your program has been sent.</li>
+    </ul>
+    <h2>How to ask for a refund</h2>
+    <p>Message me with your name, the program, and your payment details: ${contactLines()}. Refunds are sent back through the method you paid with, usually within 14 days.</p>` },
+
+  privacy: { title: "Privacy policy", html: () => `
+    <p class="updated">Last updated: ${UPDATED}</p>
+    <h2>What I collect</h2>
+    <p>When you message me to buy, I receive your name, phone number, and anything you choose to share, such as your goal or training background, along with your payment confirmation. When you book a call, Calendly collects your name, email address, and your answers to the booking questions.</p>
+    <h2>Why I use it</h2>
+    <p>Only to deliver your program, arrange your call, and answer your questions. I don't sell or rent your information.</p>
+    <h2>Services involved</h2>
+    <p>Messages go through WhatsApp or Instagram, calls are booked through Calendly, payments go through Whish or your bank, and this website is hosted on Vercel and loads fonts from Google. Each of these services has its own privacy policy.</p>
+    <h2>Cookies</h2>
+    <p>This site doesn't use its own tracking or advertising cookies. The booking calendar from Calendly may set its own cookies when it loads.</p>
+    <h2>Health information</h2>
+    <p>If you share health details with me, I use them only to give you relevant advice, and I don't share them with anyone.</p>
+    <h2>Keeping and deleting your data</h2>
+    <p>I keep your details only as long as needed for your order and my records. You can ask me to see or delete your information at any time: ${contactLines()}.</p>` },
+
+  contact: { title: "Contact", html: () => `
+    <p>LEAN by Lynn Merhej. Fitness coach based in Lebanon.</p>
+    <p>For questions about the programs, your order, a personalized plan, or in-person training, message me directly.</p>
+    <div class="contact-row contact-row-light" style="margin:22px 0">` +
+      (waLink ? '<a class="btn" href="'+waLink+'" target="_blank" rel="noopener">Message me on WhatsApp</a>' : '') +
+      '<a class="btn '+(waLink?'btn-line':'')+'" href="'+CONFIG.instagramDM+'" target="_blank" rel="noopener">Message me on Instagram</a>' +
+    `</div>
+    <p>${contactLines()}</p>
+    <p>See also: <a href="#/terms">Terms of sale</a> &middot; <a href="#/refunds">Refund policy</a> &middot; <a href="#/privacy">Privacy policy</a></p>` }
+};
+function renderPage(key){
+  const pg = PAGES[key];
+  $("#page-body").innerHTML = '<h1>'+pg.title+'</h1>' + pg.html();
+}
 
 /* ---------- Router ---------- */
 function route(){
@@ -706,11 +852,20 @@ function route(){
     document.body.dataset.route = "thanks";
     document.title = "Thank you — LEAN";
     robots.content = "noindex,nofollow";
-    renderThanks();
+    renderThanks(decodeURIComponent(h.replace(/^#\/thanks\/?/, "")));
     window.scrollTo(0,0);
     return;
   }
   robots.content = "index,follow";
+  const pm = h.match(/^#\/(terms|refunds|privacy|contact)\b/);
+  if(pm){
+    current = null;
+    renderPage(pm[1]);
+    document.body.dataset.route = "page";
+    document.title = PAGES[pm[1]].title + " — LEAN";
+    window.scrollTo(0,0);
+    return;
+  }
   const m = h.match(/^#\/p\/([\w-]+)/);
   const p = m && CONFIG.programs.find(x=>x.id===m[1]);
   if(p){
