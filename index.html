@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LEAN — Training programs by Lynn</title>
-<meta name="description" content="Four-week training programs by Lynn Merhej: fat-loss training, home workouts, a gym starter, and full-body strength. $30 each. Personalized programs by message.">
+<title>LEAN by Lynn Merhej</title>
+<meta name="description" content="Train with Lynn Merhej: one-on-one in-person training, online sessions, and programs built around your goals. Message on WhatsApp or Instagram.">
 <link rel="canonical" href="https://www.leanbylynnmerhej.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="LEAN by Lynn Merhej">
-<meta property="og:title" content="LEAN — Training programs by Lynn">
-<meta property="og:description" content="Four-week training programs for different goals. $30 each.">
+<meta property="og:title" content="LEAN by Lynn Merhej">
+<meta property="og:description" content="One-on-one training, online sessions, and programs built around your goals.">
 <meta property="og:url" content="https://www.leanbylynnmerhej.com/">
 <meta property="og:image" content="https://www.leanbylynnmerhej.com/assets/lynn.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#130C26">
-<meta name="robots" content="index,follow" id="robots-meta">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -27,867 +26,137 @@
     --volt-hover:#FFE766;
     --lilac:#A996D8;
     --chalk:#EFEBF6;
-    --ink:#130C26;
-    --white:#FFFFFF;
-    --plum:var(--midnight);
-    --plum-2:var(--nightshade);
-    --mist:var(--chalk);
+    --text-soft:#D9CFEA;
     --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
     --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-    --pad:clamp(20px,5vw,56px);
-    --max:1080px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-  body{min-height:100vh;display:flex;flex-direction:column;font-family:var(--body);font-size:17px;line-height:1.55;color:var(--ink);background:var(--mist)}
+  html{-webkit-text-size-adjust:100%}
+  body{min-height:100vh;display:flex;flex-direction:column;font-family:var(--body);font-size:17px;line-height:1.5;color:var(--chalk);background:var(--midnight)}
   a{color:inherit}
-  img,svg{max-width:100%;display:block}
-  :focus-visible{outline:3px solid #6B4FC9;outline-offset:3px;border-radius:4px}
-  .dark :focus-visible,.nav :focus-visible,footer :focus-visible{outline-color:var(--volt)}
-  main{flex:1 0 auto}
-  body[data-route="page"] main{background:var(--white)}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-  h1,h2,h3{font-family:var(--display);font-weight:800;line-height:.95;letter-spacing:.005em}
-  h1{font-size:clamp(3.4rem,13vw,7.5rem)}
-  h2{font-size:clamp(2.2rem,6.5vw,3.6rem);margin-bottom:.5em}
-  h3{font-size:1.7rem}
-  p{max-width:62ch}
+  img{max-width:100%;display:block}
+  :focus-visible{outline:3px solid var(--volt);outline-offset:3px;border-radius:6px}
 
-  /* nav */
-  .nav{position:sticky;top:0;z-index:20;background:var(--plum);color:var(--white)}
-  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
-  .logo{font-family:var(--display);font-weight:900;font-size:1.9rem;letter-spacing:.08em;text-decoration:none}
-  .nav-links{display:flex;gap:22px;align-items:center;font-size:.95rem}
-  .nav-links a{text-decoration:none;opacity:.85}
-  .nav-links a:hover{opacity:1}
-  .nav-cta{border:1.5px solid var(--lilac);padding:8px 16px;border-radius:999px;font-weight:600;opacity:1!important}
-  .nav-cta:hover{background:var(--lilac);color:var(--midnight)}
+  main{flex:1 0 auto;width:100%;max-width:560px;margin:0 auto;padding:28px 20px 40px}
 
-  /* buttons */
-  .btn{display:inline-block;font:600 1rem var(--body);background:var(--volt);color:var(--ink);border:0;border-radius:999px;padding:15px 28px;cursor:pointer;text-decoration:none;transition:background .15s,transform .15s}
-  .btn:hover{background:var(--volt-hover);color:var(--ink)}
+  .logo{font-family:var(--display);font-weight:900;font-size:1.6rem;letter-spacing:.12em;text-align:center;margin-bottom:22px}
+
+  .photo{border-radius:22px;overflow:hidden;background:var(--nightshade)}
+  .photo img{width:100%;height:auto;aspect-ratio:4/4.4;object-fit:cover;object-position:50% 22%}
+
+  .intro{text-align:center;margin:24px 0 26px}
+  .intro h1{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,11vw,3.4rem);line-height:.95;letter-spacing:.01em}
+  .intro .role{color:var(--lilac);font-weight:600;font-size:.95rem;letter-spacing:.08em;text-transform:uppercase;margin-top:10px}
+  .intro p{color:var(--text-soft);margin:14px auto 0;max-width:40ch}
+
+  .btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;font:600 1.05rem var(--body);border-radius:999px;padding:16px 22px;text-decoration:none;transition:background .15s,transform .15s,color .15s}
   .btn:active{transform:scale(.98)}
-  .btn-line{background:transparent;color:inherit;border:2px solid currentColor}
+  .btn svg{width:22px;height:22px;flex:none}
+  .btn-main{background:var(--volt);color:var(--midnight)}
+  .btn-main:hover{background:var(--volt-hover)}
+  .btn-line{border:2px solid var(--chalk);color:var(--chalk);margin-top:12px}
   .btn-line:hover{background:var(--chalk);color:var(--midnight)}
 
-  /* sections */
-  section{padding:clamp(48px,9vw,96px) 0}
-  .dark{background:var(--plum);color:var(--white)}
-  .dark p{color:#E7DCEE}
-  .white{background:var(--white)}
+  h2{font-family:var(--display);font-weight:800;font-size:2rem;line-height:1;margin:44px 0 6px}
+  .sub{color:var(--text-soft);font-size:.98rem;margin-bottom:16px}
 
-  /* views */
-  [data-view]{display:none}
-  body[data-route="home"] [data-view="home"],
-  body[data-route="program"] [data-view="program"]{display:block}
-  body[data-route="thanks"] [data-view="thanks"]{display:block}
-  body[data-route="page"] [data-view="page"]{display:block}
+  .services{display:grid;gap:12px}
+  .service{display:block;background:var(--nightshade);border-radius:18px;padding:20px 20px 18px;text-decoration:none;border:1.5px solid transparent;transition:border-color .15s}
+  .service:hover{border-color:var(--lilac)}
+  .service .tag{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--midnight);background:var(--lilac);border-radius:999px;padding:3px 10px;margin-bottom:10px}
+  .service h3{font-family:var(--display);font-weight:800;font-size:1.75rem;line-height:1}
+  .service p{color:var(--text-soft);font-size:.98rem;margin-top:8px}
+  .service .ask{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-weight:600;font-size:.95rem;color:var(--volt)}
 
-  /* home hero */
-  .hero{padding-top:clamp(44px,8vw,88px);padding-bottom:clamp(56px,10vw,110px);overflow:hidden}
-  .hero h1{max-width:9ch}
-  .hero h1 span{display:block;color:var(--lilac)}
-  .hero p{font-size:1.2rem;margin:26px 0 32px}
-  .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-  .hero-grid{display:grid;gap:36px;align-items:center}
-  .hero-photo{margin:0;border-radius:20px;overflow:hidden;background:var(--nightshade);max-width:460px}
-  .hero-photo img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%}
+  .tip{margin-top:44px;border-top:1px solid var(--nightshade);padding-top:24px}
+  .tip h2{margin-top:0}
+  .tip ul{list-style:none;display:grid;gap:10px;margin:14px 0 24px}
+  .tip li{position:relative;padding-left:28px;color:var(--text-soft)}
+  .tip li::before{content:"";position:absolute;left:4px;top:8px;width:12px;height:7px;border-left:3px solid var(--volt);border-bottom:3px solid var(--volt);transform:rotate(-45deg)}
 
-  /* program list */
-  .programs{display:grid;gap:14px}
-  .prog{display:grid;grid-template-columns:1fr auto;gap:6px 20px;align-items:center;background:var(--white);border-radius:16px;padding:22px 24px;text-decoration:none}
-  .prog h3{grid-column:1}
-  .prog p{grid-column:1;font-size:.98rem;color:#53435C}
-  .prog .price{grid-column:2;grid-row:1/-1;align-self:center;font-family:var(--display);font-weight:800;font-size:2.2rem}
-  .prog.live{border:2px solid var(--pine)}
-  .prog.live:hover{background:#E8F1EE}
-  .prog.soon{background:transparent;border:2px dashed #BBA7C8;color:#53435C}
-  .prog.soon .price{font-size:1rem;font-family:var(--body);font-weight:500}
-  .prog-goal{grid-column:1;font-size:.95rem;color:var(--ink);margin-top:4px}
-  .chips{grid-column:1;display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-  .chips span{font-size:.8rem;font-weight:600;color:var(--nightshade);background:var(--chalk);border-radius:999px;padding:4px 10px}
-  .pick-title{margin:34px 0 12px;font-size:1.9rem}
-  .pick{display:grid;gap:8px}
-  .pick-row{display:flex;flex-direction:column;align-items:flex-start;gap:4px;background:transparent;border:1.5px solid #CFC3DC;border-radius:14px;padding:14px 18px;text-decoration:none}
-  .pick-row:hover{background:var(--white)}
-  @media(min-width:560px){.pick-row{flex-direction:row;justify-content:space-between;align-items:center;gap:16px}}
-  .pick-row span{font-weight:500}
-  .pick-row b{font-family:var(--display);font-weight:800;font-size:1.25rem;white-space:nowrap;color:var(--pine)}
-  .spec{display:grid;gap:0;background:var(--white);border-radius:16px;padding:6px 22px}
-  .spec div{display:grid;gap:2px;padding:16px 0;border-top:1px solid var(--mist)}
-  .spec div:first-child{border-top:0}
-  .spec dt{font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--pine)}
-  .spec dd{font-size:1.02rem}
-  @media(min-width:760px){.spec div{grid-template-columns:200px 1fr;gap:20px}}
-  .tag{display:inline-block;font-size:.8rem;font-weight:600;background:var(--volt);color:var(--ink);border-radius:999px;padding:3px 10px;margin-bottom:6px}
+  footer{text-align:center;padding:24px 20px 32px;color:var(--lilac);font-size:.88rem}
+  footer a{color:var(--chalk)}
 
-  /* about */
-  .about{display:grid;gap:28px}
-  .about .big{font-family:var(--display);font-weight:800;font-size:clamp(1.9rem,5vw,3rem);line-height:1.02;max-width:20ch}
-  .how{display:grid;gap:18px;margin-top:8px}
-  .how div{border-top:2px solid var(--lilac);padding-top:14px}
-  .how strong{display:block;font-size:1.05rem;margin-bottom:2px}
-
-  /* program page hero */
-  .p-hero{padding-top:clamp(36px,7vw,72px);padding-bottom:clamp(40px,7vw,80px)}
-  .eyebrow{color:var(--lilac);font-weight:600;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
-  .back{display:inline-block;margin-bottom:22px;font-size:.95rem;opacity:.85;text-decoration:none}
-  .back:hover{opacity:1;text-decoration:underline}
-  .p-hero h1{font-size:clamp(2.6rem,9.5vw,5.2rem);max-width:16ch}
-  .price-note{margin-top:12px;font-size:.95rem;color:var(--lilac)}
-  .p-hero .lead{font-size:1.2rem;margin:22px 0 28px}
-  .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 24px;margin:0 0 30px;max-width:520px}
-  .facts dt{font-size:.88rem;color:var(--lilac)}
-  .facts dd{font-family:var(--display);font-weight:800;font-size:1.7rem;line-height:1.05}
-  .buy-row{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
-  .buy-row .price-big{font-family:var(--display);font-weight:800;font-size:2.6rem}
-  .notice{margin-top:14px;padding:12px 16px;border-radius:12px;background:var(--plum-2);color:#fff;font-size:.95rem;max-width:520px}
-  .notice[hidden]{display:none}
-  .dm-line{margin-top:22px;font-size:.98rem;color:#E7DCEE}
-  .dm-line a{color:var(--volt);font-weight:600}
-  .contact-row{display:flex;gap:12px;flex-wrap:wrap}
-  .contact-row-light .btn-line{color:var(--ink)}
-  .notice a{color:var(--volt);font-weight:600}
-  .pay-panel b.pay-title{display:block;font-size:1.05rem;margin-bottom:6px}
-  .pay-panel .pay-steps{margin:0 0 14px;color:#E7DCEE;font-size:.95rem}
-  .pay-panel .contact-row a{text-decoration:none}
-  .notice a.btn{color:var(--ink)}
-  .notice a.btn-line{color:#fff}
-  .notice a.btn-line:hover{color:var(--midnight)}
-  .pay-panel .pay-note{margin-top:12px;font-size:.88rem;color:var(--lilac)}
-  .light-notice{background:var(--plum);}
-
-  /* week preview */
-  .week{background:var(--white);border-radius:20px;overflow:hidden;box-shadow:0 1px 0 #E3DAEA}
-  .tabs{display:flex;overflow-x:auto;border-bottom:2px solid var(--mist)}
-  .tab{flex:1 0 auto;font:600 1rem var(--body);padding:16px 20px;border:0;background:none;color:#6A5A74;cursor:pointer;border-bottom:4px solid transparent;margin-bottom:-2px;white-space:nowrap}
-  .tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--pine)}
-  .day{padding:24px}
-  .day h3{margin-bottom:4px}
-  .day .sub{color:#6A5A74;font-size:.95rem;margin-bottom:18px}
-  .lifts{list-style:none}
-  .lifts li{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-top:1px solid var(--mist);font-weight:500}
-  .lifts li span:last-child{font-family:var(--display);font-weight:800;font-size:1.3rem;white-space:nowrap}
-  .lifts li.locked{color:#8A7B94;font-weight:400;font-style:normal}
-  .lifts li.locked span:last-child{font-family:var(--body);font-size:.9rem;font-weight:500}
-
-  /* policy pages */
-  .legal{max-width:760px}
-  .legal h1{font-size:clamp(2.6rem,9vw,4.4rem);margin-bottom:10px}
-  .legal h2{font-size:1.7rem;margin:30px 0 8px}
-  .legal p,.legal li{max-width:68ch;color:#3B3150}
-  .legal p+p{margin-top:10px}
-  .legal ul{padding-left:20px}
-  .legal li{margin:6px 0}
-  .legal a{color:var(--nightshade);font-weight:600}
-  .legal .contact-row a{color:inherit}
-  .legal .contact-row a.btn{color:var(--ink)}
-  .updated{font-size:.9rem;color:#6A5A74}
-  .foot-links{display:flex;flex-wrap:wrap;gap:8px 18px}
-  .pay-terms{margin-top:6px;font-size:.85rem;color:#D9C9E3}
-  .pay-terms a{color:#fff;text-decoration:underline}
-
-  /* thank-you page */
-  .steps{list-style:none;counter-reset:s;display:grid;gap:16px;margin-top:28px;max-width:560px}
-  .steps li{counter-increment:s;display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start}
-  .steps li::before{content:counter(s);font-family:var(--display);font-weight:800;font-size:2rem;line-height:1;color:var(--lilac)}
-  .steps b{display:block;color:#fff;font-weight:600}
-  .steps span{color:#E7DCEE;font-size:.98rem}
-  .cal-box{margin-top:24px;background:var(--white);border-radius:16px;overflow:hidden;border:1px solid #DDD2E6}
-  .cal-box .calendly-inline-widget{min-width:300px;height:780px}
-  .cal-soon{padding:22px}
-
-  /* week at a glance */
-  .glance{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
-  .glance-card{background:var(--white);border-radius:16px;padding:22px 22px 20px;display:flex;flex-direction:column;gap:6px}
-  .glance-day{font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--pine)}
-  .glance-card h3{font-size:1.9rem}
-  .glance-card p{color:#53435C;font-size:.98rem}
-  .glance-count{margin-top:10px;padding-top:12px;border-top:1px solid var(--mist);font-size:.92rem;font-weight:600}
-
-  /* progression */
-  .prog-table{display:grid;gap:12px}
-  .prog-row{display:grid;grid-template-columns:90px 1fr;gap:16px;background:var(--plum-2);border-radius:14px;padding:18px 20px}
-  .prog-row b{font-family:var(--display);font-weight:800;font-size:1.7rem;line-height:1}
-  .prog-row span{display:block}
-  .prog-row .what{font-weight:600}
-  .prog-row .effort{color:#D9C9E3;font-size:.95rem;grid-column:1/-1}
-
-  /* inside + fit */
-  .cols{display:grid;gap:36px}
-  .checks{list-style:none}
-  .checks li{padding:12px 0 12px 34px;border-top:1px solid #DDD2E6;position:relative}
-  .checks li::before{content:"";position:absolute;left:4px;top:19px;width:14px;height:8px;border-left:3px solid var(--pine);border-bottom:3px solid var(--pine);transform:rotate(-45deg)}
-  .checks.no li::before{border:0;width:16px;height:3px;background:#8A7B94;transform:none;top:25px;left:2px}
-
-  /* faq */
-  details{border-top:1px solid #DDD2E6;padding:18px 0}
-  details:last-of-type{border-bottom:1px solid #DDD2E6}
-  summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
-  summary::-webkit-details-marker{display:none}
-  summary::after{content:"+";font-size:1.4rem;line-height:1}
-  details[open] summary::after{content:"–"}
-  details p{margin-top:10px;color:#4A3F66}
-
-  /* final cta + footer */
-  .final{text-align:left}
-  .final h2{max-width:12ch}
-  footer{background:var(--midnight);color:#CDBFD6;padding:36px 0;font-size:.92rem}
-  footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
-  footer a{color:#fff}
-
-  @media(min-width:760px){
-    .how{grid-template-columns:repeat(3,1fr)}
-    .cols{grid-template-columns:1fr 1fr}
-    .prog-row{grid-template-columns:110px 1fr 1.2fr;align-items:center}
-    .prog-row .effort{grid-column:auto}
-    .about{grid-template-columns:1fr 1fr;align-items:start}
-    .hero-grid{grid-template-columns:1.1fr .9fr}
-    .hero-photo{justify-self:end}
-  }
-  @media(prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto}
-    *{transition:none!important}
-  }
-  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
-<body data-route="home">
-
-<header class="nav">
-  <div class="wrap">
-    <a class="logo" href="#/" aria-label="LEAN home">LEAN</a>
-    <nav class="nav-links" aria-label="Main">
-      <a href="#programs" data-home-link>Programs</a>
-      <a href="#" class="nav-cta" id="nav-contact">Message me</a>
-    </nav>
-  </div>
-</header>
+<body>
 
 <main>
+  <div class="logo">LEAN</div>
 
-<!-- ============ HOME ============ -->
-<div data-view="home">
-  <section class="dark hero">
-    <div class="wrap hero-grid">
-      <div>
-        <h1>Train with a plan<span>that ends in week 4.</span></h1>
-        <p>Four starter programs by Lynn, each built to fix one common problem. They're general and temporary, and a good place to start. Each one is delivered the moment you buy.</p>
-        <div class="hero-actions">
-          <a class="btn" href="#programs">See the programs</a>
-          <a class="btn btn-line" href="https://instagram.com/lynnmerhej.fit" target="_blank" rel="noopener">@lynnmerhej.fit</a>
-        </div>
-      </div>
-      <figure class="hero-photo">
-        <img src="assets/lynn.jpg" alt="Lynn smiling and flexing her arm at a Hyrox event" width="900" height="1346" fetchpriority="high">
-      </figure>
-    </div>
+  <figure class="photo">
+    <img src="assets/lynn.jpg" alt="Lynn smiling and flexing her arm at a fitness event" width="900" height="1346" fetchpriority="high">
+  </figure>
+
+  <section class="intro">
+    <h1>Train with Lynn</h1>
+    <p class="role">Fitness coach &middot; Lebanon</p>
+    <p>In person, online, or with a program built around you. Message me and tell me what you're working towards.</p>
   </section>
 
-  <section id="programs">
-    <div class="wrap">
-      <h2>Programs</h2>
-      <div class="programs" id="program-list"></div>
-      <h3 class="pick-title">Not sure which one?</h3>
-      <div class="pick" id="pick-list"></div>
-    </div>
-  </section>
+  <a class="btn btn-main" data-wa="general" href="#" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3Z"/></svg>
+    Message me on WhatsApp
+  </a>
+  <a class="btn btn-line" href="https://ig.me/m/lynnmerhej.fit" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    DM me on Instagram
+  </a>
 
-  <section class="white">
-    <div class="wrap about">
-      <div>
-        <h2>Programmed, not improvised.</h2>
-        <p class="big" style="font-family:var(--body);font-weight:400;font-size:1.15rem;line-height:1.55;max-width:48ch">Each program is built on NCSF programming principles: a proper warm-up, exercises chosen so movements don't repeat across the week, and a progression you can follow without guessing.</p>
-      </div>
-      <div class="how">
-        <div><strong>Pick a program</strong>One goal, one clear plan. No bundles of random workouts.</div>
-        <div><strong>Pay once</strong>$30, no subscription. The program is yours to keep.</div>
-        <div><strong>Train for 4 weeks</strong>Follow the sheet and log your lifts. Then we have a one-on-one call to plan what's next.</div>
-      </div>
-    </div>
-  </section>
+  <h2>How we can work together</h2>
+  <p class="sub">Tap the one that fits you to message me about it.</p>
 
-  <section class="white">
-    <div class="wrap cols">
-      <div>
-        <h2>Why these programs exist</h2>
-        <p style="margin-bottom:12px">I train people in person. Along the way I kept meeting people who know their way around a gym but don't know how to build a plan, or who don't have the time to put one together.</p>
-        <p style="margin-bottom:12px">These programs are that plan, already built. You open the plan, follow the sessions, and skip the guesswork.</p>
-        <p>They're temporary starter plans, general on purpose. A program built around your own needs is always better, and that's what I do with my clients.</p>
-      </div>
-      <div>
-        <h2>They're not for everyone</h2>
-        <p style="margin-bottom:12px">Each program is the same for everyone who buys it. It works best if you know the main lifts and can follow a plan on your own.</p>
-        <p>If you're brand new to training, have an injury, or need something built around your schedule, don't buy one of these. Message me and we'll find what fits.</p>
-      </div>
-    </div>
-  </section>
+  <div class="services">
+    <a class="service" data-wa="inperson" href="#" target="_blank" rel="noopener">
+      <span class="tag">In person</span>
+      <h3>One-on-one training</h3>
+      <p>Live sessions together. I coach you through every rep, correct your form, and adjust as you progress.</p>
+      <span class="ask">Ask about in-person training &rarr;</span>
+    </a>
+    <a class="service" data-wa="online" href="#" target="_blank" rel="noopener">
+      <span class="tag">Online</span>
+      <h3>Online sessions</h3>
+      <p>Train with me live from wherever you are. Good for anyone outside Lebanon or with a busy schedule.</p>
+      <span class="ask">Ask about online sessions &rarr;</span>
+    </a>
+    <a class="service" data-wa="program" href="#" target="_blank" rel="noopener">
+      <span class="tag">Your plan</span>
+      <h3>A program built for you</h3>
+      <p>A training plan made around your goal, your schedule, your level, and the equipment you have.</p>
+      <span class="ask">Ask about a personalized program &rarr;</span>
+    </a>
+  </div>
 
-  <section class="dark">
-    <div class="wrap final">
-      <h2>Want a program made for you?</h2>
-      <p style="margin-bottom:12px">If you want a plan built around your goal, your schedule, and the equipment you have, message me directly. I also train people in person, so you can ask about that too.</p>
-      <p style="margin-bottom:26px">Personalized programs and in-person training are priced separately. Tell me what you're training for and I'll reply with what I'd do.</p>
-      <div class="contact-row" data-contact></div>
-    </div>
+  <section class="tip">
+    <h2>When you message me</h2>
+    <p class="sub">Tell me these so I can reply with what I'd suggest:</p>
+    <ul>
+      <li>Your main goal</li>
+      <li>How many days a week you can train</li>
+      <li>Where you train: gym, home, or not yet</li>
+      <li>Any injuries I should know about</li>
+    </ul>
+    <a class="btn btn-main" data-wa="general" href="#" target="_blank" rel="noopener">Message me on WhatsApp</a>
   </section>
-</div>
-
-<!-- ============ PROGRAM (template, filled by script) ============ -->
-<div data-view="program">
-  <section class="dark p-hero">
-    <div class="wrap">
-      <a class="back" href="#/">Back to all programs</a>
-      <p class="eyebrow" id="p-eyebrow"></p>
-      <h1 id="p-title"></h1>
-      <p class="lead" id="p-lead"></p>
-      <dl class="facts" id="p-facts"></dl>
-      <div class="buy-row">
-        <span class="price-big" id="p-price"></span>
-        <button class="btn" data-buy>Buy the program</button>
-      </div>
-      <p class="price-note">A coach-built plan for $30, plus a one-on-one call with me at the end.</p>
-      <div class="notice" role="status" data-notice hidden></div>
-      <p class="dm-line">Want a plan made just for you instead? <span data-contact-inline></span></p>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <h2>What this program is</h2>
-      <dl class="spec" id="p-spec"></dl>
-    </div>
-  </section>
-
-  <section class="white">
-    <div class="wrap cols">
-      <div>
-        <h2>Read this first</h2>
-        <p style="margin-bottom:12px">This is a general starter program. It's temporary, built to fit common needs, and the same for everyone who buys it. It will get you moving and show you what works.</p>
-        <p>A program built around your own needs is always better, and that's what I build when we work together.</p>
-      </div>
-      <div style="align-self:center">
-        <div class="contact-row contact-row-light" data-contact></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <h2>A week at a glance</h2>
-      <p style="margin-bottom:26px">Here's how each week is laid out. Every session includes a warm-up and a cooldown. The exact exercises, sets, and reps are inside the program.</p>
-      <div class="glance" id="p-days"></div>
-    </div>
-  </section>
-
-  <section class="dark">
-    <div class="wrap">
-      <h2>How the four weeks progress</h2>
-      <div class="prog-table" id="p-progress"></div>
-    </div>
-  </section>
-
-  <section class="white">
-    <div class="wrap cols">
-      <div>
-        <h2>What you get</h2>
-        <ul class="checks">
-          <li>A week-by-week plan with sets, reps, rest, and progression</li>
-          <li>A one-on-one call with me after week 4 to plan your next steps</li>
-          <li>A warm-up and cooldown for every session</li>
-          <li>Options to swap exercises for different equipment</li>
-          <li>A tracking sheet for your weights and reps</li>
-          <li>A short guide on how to use the program and judge effort</li>
-        </ul>
-      </div>
-      <div>
-        <h2>Is it for you?</h2>
-        <ul class="checks" id="p-yes"></ul>
-        <ul class="checks no" id="p-no" style="margin-top:18px"></ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="white">
-    <div class="wrap cols">
-      <div>
-        <h2>Your one-on-one call after week 4</h2>
-        <p style="margin-bottom:12px">Every program includes a one-on-one call with me at the end of your four weeks. You book it right after you buy, at a time that suits you. Calls are in the evening, after 6 pm Beirut time. We'll go through your results and talk about what to do next.</p>
-        <p>Everyone's body, schedule, and goals are different, so a program built around your needs will always work better than a general one. That's what we'll plan on the call, or we can train together in person.</p>
-      </div>
-      <div style="align-self:center">
-        <div class="contact-row contact-row-light" data-contact></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <h2>Questions</h2>
-      <div id="p-faq"></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <h2>Other programs</h2>
-      <div class="programs" id="p-others"></div>
-    </div>
-  </section>
-
-  <section class="dark">
-    <div class="wrap final">
-      <h2>Start week 1 today.</h2>
-      <p style="margin-bottom:26px">One clear plan, four weeks, $30. Then a one-on-one call with me to plan what's next.</p>
-      <button class="btn" data-buy>Buy the program</button>
-      <div class="notice" role="status" data-notice hidden></div>
-    </div>
-  </section>
-</div>
-
-<!-- ============ POLICY & CONTACT PAGES ============ -->
-<div data-view="page">
-  <section class="white">
-    <div class="wrap legal" id="page-body"></div>
-  </section>
-</div>
-
-<!-- ============ THANK YOU (after purchase) ============ -->
-<div data-view="thanks">
-  <div id="thanks-open" hidden>
-  <section class="dark p-hero">
-    <div class="wrap">
-      <p class="eyebrow">Thank you</p>
-      <h1>You're in.</h1>
-      <p class="lead">Thank you for buying. Here's what happens next.</p>
-      <ol class="steps">
-        <li><div><b>Get your program</b><span>I send it to you directly, by WhatsApp or email.</span></div></li>
-        <li><div><b>Book your one-on-one call</b><span>Pick an evening that suits you, below. Choose a date about four weeks from today, right after you finish.</span></div></li>
-        <li><div><b>Train for four weeks</b><span>Follow the plan and write down your numbers in week 1 and week 4.</span></div></li>
-        <li><div><b>Send me your results</b><span>Before the call, so we can plan what's next together.</span></div></li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="white">
-    <div class="wrap">
-      <h2>Book your call</h2>
-      <p>Calls are in the evening, after 6 pm Beirut time. You'll see the available times in your own time zone, and Calendly emails you a confirmation.</p>
-      <div class="cal-box" id="cal-box"></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap cols">
-      <div>
-        <h2>Questions before your call?</h2>
-        <p>Message me any time. And send your week 1 and week 4 numbers before we speak.</p>
-      </div>
-      <div style="align-self:center">
-        <div class="contact-row contact-row-light" data-contact></div>
-      </div>
-    </div>
-  </section>
-</div>
-  <section class="dark p-hero" id="thanks-locked" hidden>
-    <div class="wrap">
-      <p class="eyebrow">Buyers only</p>
-      <h1>This page is for people who bought a program.</h1>
-      <p class="lead">If you bought one, open the link from your purchase confirmation. If you can't find it, message me and I'll send it to you.</p>
-      <div class="contact-row" data-contact></div>
-      <p class="dm-line"><a href="#/">Back to the programs</a></p>
-    </div>
-  </section>
-</div>
-
 </main>
 
 <footer>
-  <div class="wrap">
-    <span>LEAN by Lynn Merhej &middot; Lebanon</span>
-    <nav class="foot-links" aria-label="Policies">
-      <a href="#/terms">Terms of sale</a>
-      <a href="#/refunds">Refund policy</a>
-      <a href="#/privacy">Privacy policy</a>
-      <a href="#/contact">Contact</a>
-      <a href="https://instagram.com/lynnmerhej.fit" target="_blank" rel="noopener">@lynnmerhej.fit</a>
-    </nav>
-  </div>
+  LEAN by Lynn Merhej &middot; <a href="https://instagram.com/lynnmerhej.fit" target="_blank" rel="noopener">@lynnmerhej.fit</a>
 </footer>
 
 <script>
-/* ---------- CONFIG: edit here ---------- */
-const CONFIG = {
-  instagram: "https://instagram.com/lynnmerhej.fit",
-  instagramDM: "https://ig.me/m/lynnmerhej.fit",
-  bookingIv: "WyWfE3ejhgx8bYus", /* encrypted booking link: only opens with the private thank-you URL */
-  bookingData: "fuH9md9xaLcnfMlqWllLmNJPZ76k7Aa8g62vOD0GG/5jKvHPOhAoomr+agvXBFbKiFjs7jje72Gest7XK4WK9w==",
-  email: "", /* optional: a contact email shown on the policy and contact pages */
-  whatsapp: "96171868604", /* your number with country code, digits only */
-  whatsappMessage: "Hi Lynn, I'd like to ask about a personalized program.",
-
-  /* default 4-week progression (a program can override with its own "progress") */
-  progress: [
-    ["Learn the lifts", "Lower rep range, stop with about 3 reps left in the tank."],
-    ["Add load", "Add a little weight or 1-2 reps, with about 2 reps left."],
-    ["Add volume", "An extra set on the first two exercises each day, with 1-2 reps left."],
-    ["Push the top sets", "Last set of each main lift goes close to failure, with good form."]
-  ],
-
-  programs: [
-    {
-      id: "lean-strong", title: "Lean & Strong", price: "$30", checkout: "", /* paste checkout link here */
-      blurb: "Random workouts, no change? A structured plan.",
-      goal: "Lose fat and keep your muscle",
-      style: "Strength training plus conditioning, full body",
-      level: "Some training experience. You know the basic lifts.",
-      chips: ["The gym","4 days a week","Some experience"],
-      pick: "I want to lose fat, but I train with no clear plan.",
-      headline: "Doing random workouts and not seeing change?",
-      lead: "Lean & Strong gives you a structured four-week plan that mixes strength and conditioning, so every session has a purpose. Training only, with no diet rules.",
-      facts: [["Length","4 weeks"],["Sessions","4 days a week"],["Where","The gym"],["Level","Some experience"]],
-      days: [
-        { tab:"Day 1", name:"Lower body strength", sub:"Build the base with big leg movements.",
-          exercises:"5-6" },
-        { tab:"Day 2", name:"Upper body & core", sub:"Push, pull, and core work.",
-          exercises:"5-6" },
-        { tab:"Day 3", name:"Conditioning circuit", sub:"Higher heart rate, shorter rests.",
-          exercises:"5-6" },
-        { tab:"Day 4", name:"Full body", sub:"Everything together to finish the week.",
-          exercises:"5-6" }
-      ],
-      yes: ["You can train 4 days a week for 4 weeks","You have access to a gym","You want a plan to follow, not a coach checking in"],
-      no: ["It's built for people who already know the basic lifts"],
-      equipment: "A gym with dumbbells, a bench, a barbell or machines, and a cable machine."
-    },
-    {
-      id: "home", title: "Home Workouts", price: "$30", checkout: "",
-      blurb: "No gym? Full one-hour sessions at home.",
-      goal: "Get fitter and stronger without a gym",
-      style: "Full-body sessions with bodyweight, a resistance band, and dumbbells",
-      level: "Beginner to intermediate",
-      chips: ["At home","4 days, about 1 hour","Beginner and up"],
-      pick: "I can't get to a gym.",
-      headline: "Can't get to a gym? Train at home.",
-      lead: "Home Workouts gives you four weeks of full one-hour sessions you can do in your living room, with simple equipment and a plan that builds week by week. Private, simple, and no gym needed.",
-      facts: [["Length","4 weeks"],["Sessions","4 days, about 1 hour"],["Where","At home, no gym"],["Level","Beginner to intermediate"]],
-      days: [
-        { tab:"Day 1", name:"Lower body", sub:"Legs and glutes with your own bodyweight.",
-          exercises:"5-6" },
-        { tab:"Day 2", name:"Upper body", sub:"Push and pull with bodyweight and a band.",
-          exercises:"5-6" },
-        { tab:"Day 3", name:"Core & cardio", sub:"Short, sweaty, and simple.",
-          exercises:"5-6" },
-        { tab:"Day 4", name:"Full-body circuit", sub:"The whole body in one session.",
-          exercises:"5-6" }
-      ],
-      yes: ["You want to train at home, with little or no equipment","You can set aside about an hour, four days a week","You want a plan to follow, not a coach checking in"],
-      no: ["It uses light equipment, so it's not built for lifting heavy"],
-      equipment: "Nothing is required. A resistance band and a pair of dumbbells make it better, and the program shows how to do each session without them."
-    },
-    {
-      id: "gym-starter", title: "Gym Starter", price: "$30", checkout: "",
-      blurb: "Lost in the gym? A plan for your first month.",
-      goal: "Learn the gym and build a base",
-      style: "Machines, cables, dumbbells, and the basic lifts",
-      level: "Complete beginner. No experience needed.",
-      chips: ["The gym","3 days a week","Beginner"],
-      pick: "I'm new to the gym.",
-      headline: "Don't know what to do in the gym?",
-      lead: "Gym Starter gives you a written plan for your first four weeks, so you walk in knowing exactly what to do. Simple sessions that teach you the machines, the basic lifts, and good form.",
-      facts: [["Length","4 weeks"],["Sessions","3 days a week"],["Where","The gym"],["Level","Complete beginner"]],
-      progress: [
-        ["Learn the moves", "Light weights. Focus on form and getting comfortable with the machines."],
-        ["Add a little weight", "Increase the weight slightly when the last reps feel easy."],
-        ["Add a set", "An extra set on the first exercise each day."],
-        ["Repeat and compare", "Repeat the week and compare your weights to week 1."]
-      ],
-      days: [
-        { tab:"Day 1", name:"Lower body basics", sub:"Machines and simple free weights.",
-          exercises:"5-6" },
-        { tab:"Day 2", name:"Upper body basics", sub:"Push and pull on machines and cables.",
-          exercises:"5-6" },
-        { tab:"Day 3", name:"Full body", sub:"Put it all together.",
-          exercises:"5-6" }
-      ],
-      yes: ["You're new to the gym, or feel lost when you walk in","You can train 3 days a week for 4 weeks","You want simple sessions that teach you the basics"],
-      no: ["It's built for beginners. If you've trained for years, try Full-Body Strength"],
-      equipment: "A normal gym with machines, cables, and dumbbells."
-    },
-    {
-      id: "full-body-strength", title: "Full-Body Strength", price: "$30", checkout: "",
-      blurb: "Not getting stronger? Clear weekly targets.",
-      goal: "Get stronger on the big lifts",
-      style: "Heavy compound lifts with a clear weekly progression",
-      level: "Intermediate. You know the basic lifts.",
-      chips: ["The gym","3 days a week","Intermediate"],
-      pick: "I want to get stronger.",
-      headline: "Training but not getting stronger?",
-      lead: "Full-Body Strength gives you three sessions a week and a clear target for what to lift each week, so you always know when to add weight.",
-      facts: [["Length","4 weeks"],["Sessions","3 days a week"],["Where","The gym"],["Level","Intermediate"]],
-      progress: [
-        ["Set your base", "Start light enough to move well, with 2-3 reps left."],
-        ["Add weight", "Add weight to the main lifts."],
-        ["Heavier sets", "Work up to heavier top sets, keeping 1-2 reps left."],
-        ["Top sets", "One heavy top set on each main lift, with good form."]
-      ],
-      days: [
-        { tab:"Day A", name:"Squat & push", sub:"Heavy legs and chest to start.",
-          exercises:"5-6" },
-        { tab:"Day B", name:"Hinge & press", sub:"Deadlift day with overhead work.",
-          exercises:"5-6" },
-        { tab:"Day C", name:"Volume day", sub:"Lighter weights, more reps.",
-          exercises:"5-6" }
-      ],
-      yes: ["You know the basic lifts and want to get stronger","You can train 3 days a week for 4 weeks","You want a plan with clear targets to follow"],
-      no: ["It's not built for complete beginners. Start with Gym Starter if you're new"],
-      equipment: "A barbell, a rack, a bench, and dumbbells. Pull-ups or a lat pulldown for the back."
-    }
-  ]
-};
-
-const $ = s => document.querySelector(s);
-let current = null;
-
-/* ---------- Contact buttons (WhatsApp + Instagram) ---------- */
-const waLink = CONFIG.whatsapp ? "https://wa.me/"+CONFIG.whatsapp.replace(/\D/g,"")+"?text="+encodeURIComponent(CONFIG.whatsappMessage) : "";
-document.querySelectorAll("[data-contact]").forEach(box=>{
-  box.innerHTML = (waLink ? '<a class="btn" href="'+waLink+'" target="_blank" rel="noopener">Message me on WhatsApp</a>' : '') +
-    '<a class="btn '+(waLink?'btn-line':'')+'" href="'+CONFIG.instagramDM+'" target="_blank" rel="noopener">Message me on Instagram</a>';
-});
-document.querySelectorAll("[data-contact-inline]").forEach(el=>{
-  el.innerHTML = waLink
-    ? '<a href="'+waLink+'" target="_blank" rel="noopener">Message me on WhatsApp</a> or <a href="'+CONFIG.instagramDM+'" target="_blank" rel="noopener">Instagram</a>.'
-    : '<a href="'+CONFIG.instagramDM+'" target="_blank" rel="noopener">Message me directly</a>.';
-});
-$("#nav-contact").href = waLink || CONFIG.instagramDM;
-$("#nav-contact").target = "_blank";
-$("#nav-contact").rel = "noopener";
-
-/* ---------- Program cards ---------- */
-function card(p, full){
-  return '<a class="prog" href="#/p/'+p.id+'"><h3>'+p.title+'</h3><p>'+p.blurb+'</p>' +
-    (full ? '<p class="prog-goal"><strong>Goal:</strong> '+p.goal+'</p><div class="chips">'+p.chips.map(c=>'<span>'+c+'</span>').join("")+'</div>' : '') +
-    '<span class="price">'+p.price+'</span></a>';
-}
-$("#program-list").innerHTML = CONFIG.programs.map(p=>card(p,true)).join("");
-$("#pick-list").innerHTML = CONFIG.programs.map(p=>'<a class="pick-row" href="#/p/'+p.id+'"><span>'+p.pick+'</span><b>'+p.title+' &rarr;</b></a>').join("");
-
-/* ---------- Program page ---------- */
-function renderProgram(p){
-  $("#p-eyebrow").textContent = p.title + " · Starter program";
-  $("#p-title").textContent = p.headline;
-  $("#p-lead").textContent = p.lead;
-  $("#p-price").textContent = p.price;
-  $("#p-facts").innerHTML = p.facts.map(f=>'<div><dt>'+f[0]+'</dt><dd>'+f[1]+'</dd></div>').join("");
-
-  $("#p-spec").innerHTML = [
-    ["The goal", p.goal],
-    ["How you'll train", p.style],
-    ["Level", p.level],
-    ["Equipment", p.equipment],
-    ["Good to know", (p.no && p.no[0]) || ""]
-  ].filter(r=>r[1]).map(r=>'<div><dt>'+r[0]+'</dt><dd>'+r[1]+'</dd></div>').join("");
-  $("#p-days").innerHTML = p.days.map(d=>
-    '<div class="glance-card"><span class="glance-day">'+d.tab+'</span><h3>'+d.name+'</h3><p>'+d.sub+'</p><span class="glance-count">'+d.exercises+' exercises + warm-up & cooldown</span></div>').join("");
-
-  const prog = p.progress || CONFIG.progress;
-  $("#p-progress").innerHTML = prog.map((r,i)=>
-    '<div class="prog-row"><b>Week '+(i+1)+'</b><span class="what">'+r[0]+'</span><span class="effort">'+r[1]+'</span></div>').join("");
-
-  $("#p-yes").innerHTML = p.yes.map(t=>'<li>'+t+'</li>').join("");
-  $("#p-no").innerHTML = ["It's a training plan only. It has no meal plan or diet rules"].concat(p.no || []).map(t=>'<li>'+t+'</li>').join("");
-
-  const faq = [
-    ["What equipment do I need?", p.equipment],
-    ["How do I pay and get the program?", "Tap Buy and message me on WhatsApp. Outside Lebanon, you can pay to my Whish wallet using a transfer app such as Ria or Taptap Send, with your card or Apple Pay. In Lebanon, you can pay with Whish or by bank transfer. Once your payment arrives, I'll send you the program and your call booking link."],
-    ["Can I get a program made just for me?", "Yes. Message me on WhatsApp or Instagram with your goal, how many days you can train, and your equipment. A program built around your needs is always better than a general one, so it's the best next step. Personalized programs are separate from this $30 one and priced individually. I also train people in person."],
-    ["Is it a subscription?", "No. You pay $30 once."],
-    ["What if I have an injury or a medical condition?", "Check with your doctor or physiotherapist before starting any training program."],
-    ["What happens after four weeks?", "You get a one-on-one call with me. You book it right after you buy, and calls are in the evening, after 6 pm Beirut time. Send me your week 1 and week 4 numbers and how it felt beforehand, and we'll go through them together and plan your next steps. That could be a personalized program or training with me in person. You can also repeat the program with heavier weights."]
-  ];
-  $("#p-faq").innerHTML = faq.map(q=>'<details><summary>'+q[0]+'</summary><p>'+q[1]+'</p></details>').join("");
-
-  $("#p-others").innerHTML = CONFIG.programs.filter(x=>x.id!==p.id).map(card).join("");
-  document.querySelectorAll("[data-notice]").forEach(n=>n.hidden = true);
-}
-
-/* ---------- Thank-you page: Calendly booking ---------- */
-let calendlyLoaded = false;
-async function unlockBooking(token){
-  try{
-    if(!token || !window.crypto || !crypto.subtle) return null;
-    const b64 = x => Uint8Array.from(atob(x), c=>c.charCodeAt(0));
-    const keyBytes = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(token));
-    const key = await crypto.subtle.importKey("raw", keyBytes, "AES-GCM", false, ["decrypt"]);
-    const buf = await crypto.subtle.decrypt({name:"AES-GCM", iv:b64(CONFIG.bookingIv)}, key, b64(CONFIG.bookingData));
-    return new TextDecoder().decode(buf);
-  }catch(e){ return null; }
-}
-async function renderThanks(token){
-  const open = $("#thanks-open"), locked = $("#thanks-locked");
-  open.hidden = true; locked.hidden = true;
-  $("#cal-box").innerHTML = "";
-  const link = await unlockBooking(token);
-  if(!link){ locked.hidden = false; return; }
-  open.hidden = false;
-  const box = $("#cal-box");
-  const url = link + (link.includes("?") ? "&" : "?") + "hide_gdpr_banner=1";
-  box.innerHTML = '<div class="calendly-inline-widget" data-url="'+url+'"></div>';
-  if(!calendlyLoaded){
-    const sc = document.createElement("script");
-    sc.src = "https://assets.calendly.com/assets/external/widget.js";
-    sc.async = true;
-    document.body.appendChild(sc);
-    calendlyLoaded = true;
-  } else if(window.Calendly && window.Calendly.initInlineWidget){
-    window.Calendly.initInlineWidget({url: url, parentElement: box.querySelector(".calendly-inline-widget")});
-  }
-}
-
-/* ---------- Buy buttons: Whish or bank transfer via WhatsApp ---------- */
-function payLink(method){
-  const msg = "Hi Lynn, I'd like to buy " + current.title + " (" + current.price + ") and pay " + method + ".";
-  return "https://wa.me/" + CONFIG.whatsapp.replace(/\D/g,"") + "?text=" + encodeURIComponent(msg);
-}
-document.addEventListener("click", e=>{
-  const btn = e.target.closest("[data-buy]");
-  if(!btn || !current) return;
-  if(current.checkout){ window.location.href = current.checkout; return; }
-  document.querySelectorAll("[data-notice]").forEach(n=>{
-    n.hidden = false;
-    n.classList.add("pay-panel");
-    n.innerHTML =
-      '<b class="pay-title">How to pay</b>' +
-      '<p class="pay-steps">Message me on WhatsApp and I\'ll send you my payment details. Once your payment arrives, I\'ll send you the program and your call booking link.</p>' +
-      '<p class="pay-steps"><b>Outside Lebanon (GCC and MENA):</b> pay to my Whish wallet using a transfer app such as Ria or Taptap Send, with your card or Apple Pay. Availability depends on your country.</p>' +
-      '<p class="pay-steps"><b>In Lebanon:</b> Whish or bank transfer.</p>' +
-      '<div class="contact-row">' +
-        '<a class="btn" href="'+payLink("with Whish")+'" target="_blank" rel="noopener">Pay with Whish</a>' +
-        '<a class="btn btn-line" href="'+payLink("by bank transfer")+'" target="_blank" rel="noopener">Bank transfer (Lebanon)</a>' +
-      '</div>' +
-      '<p class="pay-note">Direct card payment on this site is coming soon.</p>' +
-      '<p class="pay-terms">By buying, you agree to the <a href="#/terms">Terms of sale</a> and <a href="#/refunds">Refund policy</a>.</p>';
+  /* WhatsApp number (country code, digits only) and the message each button starts with */
+  const WHATSAPP = "96171868604";
+  const MESSAGES = {
+    general:  "Hi Lynn, I'd like to train with you.",
+    inperson: "Hi Lynn, I'm interested in one-on-one in-person training.",
+    online:   "Hi Lynn, I'm interested in online training sessions.",
+    program:  "Hi Lynn, I'd like a training program built around my goals."
+  };
+  document.querySelectorAll("[data-wa]").forEach(a => {
+    a.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(MESSAGES[a.dataset.wa] || MESSAGES.general);
   });
-});
-
-/* ---------- Policy & contact pages ---------- */
-const UPDATED = "5 October 2026";
-function contactLines(){
-  const wa = waLink ? '<a href="'+waLink+'" target="_blank" rel="noopener">WhatsApp +961 71 868 604</a>' : '';
-  const ig = '<a href="'+CONFIG.instagram+'" target="_blank" rel="noopener">Instagram @lynnmerhej.fit</a>';
-  const em = CONFIG.email ? '<a href="mailto:'+CONFIG.email+'">'+CONFIG.email+'</a>' : '';
-  return [wa, ig, em].filter(Boolean).join(" &middot; ");
-}
-const PAGES = {
-  terms: { title: "Terms of sale", html: () => `
-    <p class="updated">Last updated: ${UPDATED}</p>
-    <h2>Who you are buying from</h2>
-    <p>LEAN is run by Lynn Merhej, a fitness coach based in Lebanon. Contact: ${contactLines()}.</p>
-    <h2>What you are buying</h2>
-    <p>Each program is a four-week training plan delivered digitally, plus one one-on-one call with me after you finish. The programs are general and the same for everyone who buys them. They are not personalized.</p>
-    <h2>Prices and payment</h2>
-    <p>Prices are in US dollars and shown on each program page. You can pay with Whish or by bank transfer, and by card when card payment is available. Your order is confirmed once your payment arrives.</p>
-    <h2>Delivery</h2>
-    <p>I send your program by WhatsApp or email within 48 hours of your payment being confirmed, together with the link to book your call.</p>
-    <h2>Your one-on-one call</h2>
-    <p>Each purchase includes one call, booked through the link you receive. Calls are held in the evening, after 6 pm Beirut time. Please book within 60 days of your purchase. You can reschedule through your booking confirmation. If you miss a call without notice, it may not be rescheduled.</p>
-    <h2>Health and safety</h2>
-    <p>The programs are general fitness guidance, not medical advice. Check with your doctor before starting, especially if you have an injury, a medical condition, or are pregnant. Train within your limits and stop if you feel pain or dizziness. You take part at your own risk, and to the extent the law allows, my liability is limited to the amount you paid.</p>
-    <h2>Using the program</h2>
-    <p>Your program is for your personal use only. Please don't share, resell, or publish it. All content belongs to Lynn Merhej.</p>
-    <h2>Refunds</h2>
-    <p>See the <a href="#/refunds">Refund policy</a>.</p>
-    <h2>Changes and governing law</h2>
-    <p>I may update these terms. The version shown when you buy applies to your purchase. These terms are governed by the laws of Lebanon.</p>` },
-
-  refunds: { title: "Refund policy", html: () => `
-    <p class="updated">Last updated: ${UPDATED}</p>
-    <h2>Digital products</h2>
-    <p>Because the programs are digital and can't be returned, all sales are final once your program has been sent.</p>
-    <h2>When you get a full refund</h2>
-    <ul>
-      <li>You paid but didn't receive your program within 48 hours.</li>
-      <li>The file doesn't work and I can't fix it within 48 hours of you telling me.</li>
-      <li>You paid twice for the same program. The duplicate payment is refunded.</li>
-      <li>You ask to cancel before your program has been sent.</li>
-    </ul>
-    <h2>How to ask for a refund</h2>
-    <p>Message me with your name, the program, and your payment details: ${contactLines()}. Refunds are sent back through the method you paid with, usually within 14 days.</p>` },
-
-  privacy: { title: "Privacy policy", html: () => `
-    <p class="updated">Last updated: ${UPDATED}</p>
-    <h2>What I collect</h2>
-    <p>When you message me to buy, I receive your name, phone number, and anything you choose to share, such as your goal or training background, along with your payment confirmation. When you book a call, Calendly collects your name, email address, and your answers to the booking questions.</p>
-    <h2>Why I use it</h2>
-    <p>Only to deliver your program, arrange your call, and answer your questions. I don't sell or rent your information.</p>
-    <h2>Services involved</h2>
-    <p>Messages go through WhatsApp or Instagram, calls are booked through Calendly, payments go through Whish or your bank, and this website is hosted on Vercel and loads fonts from Google. Each of these services has its own privacy policy.</p>
-    <h2>Cookies</h2>
-    <p>This site doesn't use its own tracking or advertising cookies. The booking calendar from Calendly may set its own cookies when it loads.</p>
-    <h2>Health information</h2>
-    <p>If you share health details with me, I use them only to give you relevant advice, and I don't share them with anyone.</p>
-    <h2>Keeping and deleting your data</h2>
-    <p>I keep your details only as long as needed for your order and my records. You can ask me to see or delete your information at any time: ${contactLines()}.</p>` },
-
-  contact: { title: "Contact", html: () => `
-    <p>LEAN by Lynn Merhej. Fitness coach based in Lebanon.</p>
-    <p>For questions about the programs, your order, a personalized plan, or in-person training, message me directly.</p>
-    <div class="contact-row contact-row-light" style="margin:22px 0">` +
-      (waLink ? '<a class="btn" href="'+waLink+'" target="_blank" rel="noopener">Message me on WhatsApp</a>' : '') +
-      '<a class="btn '+(waLink?'btn-line':'')+'" href="'+CONFIG.instagramDM+'" target="_blank" rel="noopener">Message me on Instagram</a>' +
-    `</div>
-    <p>See also: <a href="#/terms">Terms of sale</a> &middot; <a href="#/refunds">Refund policy</a> &middot; <a href="#/privacy">Privacy policy</a></p>` }
-};
-function renderPage(key){
-  const pg = PAGES[key];
-  $("#page-body").innerHTML = '<h1>'+pg.title+'</h1>' + pg.html();
-}
-
-/* ---------- Router ---------- */
-function route(){
-  const h = location.hash;
-  const robots = document.getElementById("robots-meta");
-  if(h.startsWith("#/thanks")){
-    current = null;
-    document.body.dataset.route = "thanks";
-    document.title = "Thank you — LEAN";
-    robots.content = "noindex,nofollow";
-    renderThanks(decodeURIComponent(h.replace(/^#\/thanks\/?/, "")));
-    window.scrollTo(0,0);
-    return;
-  }
-  robots.content = "index,follow";
-  const pm = h.match(/^#\/(terms|refunds|privacy|contact)\b/);
-  if(pm){
-    current = null;
-    renderPage(pm[1]);
-    document.body.dataset.route = "page";
-    document.title = PAGES[pm[1]].title + " — LEAN";
-    window.scrollTo(0,0);
-    return;
-  }
-  const m = h.match(/^#\/p\/([\w-]+)/);
-  const p = m && CONFIG.programs.find(x=>x.id===m[1]);
-  if(p){
-    current = p;
-    renderProgram(p);
-    document.body.dataset.route = "program";
-    document.title = p.title + " — LEAN";
-    window.scrollTo(0,0);
-  } else {
-    current = null;
-    document.body.dataset.route = "home";
-    document.title = "LEAN — Training programs by Lynn";
-    if(h==="#programs"){ setTimeout(()=>$("#programs").scrollIntoView(),0); }
-    else window.scrollTo(0,0);
-  }
-}
-document.querySelector("[data-home-link]").addEventListener("click",e=>{
-  if(document.body.dataset.route!=="home"){ e.preventDefault(); location.hash="#/"; setTimeout(()=>$("#programs").scrollIntoView(),50); }
-});
-window.addEventListener("hashchange",route);
-route();
 </script>
 </body>
 </html>
